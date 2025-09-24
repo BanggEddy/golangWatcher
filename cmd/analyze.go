@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/axellelanca/gowatcher_correction/internal/checker"
-	"github.com/axellelanca/gowatcher_correction/internal/config"
-	"github.com/axellelanca/gowatcher_correction/internal/reporter"
+	"github.com/axellelanca/go_loganizer/internal/analyzer"
+	"github.com/axellelanca/go_loganizer/internal/config"
+	"github.com/axellelanca/go_loganizer/internal/reporter"
 	"github.com/spf13/cobra"
 )
 
@@ -16,10 +16,10 @@ var (
 	outputFilePath string
 )
 
-var checkCmd = &cobra.Command{
-	Use:   "check",
-	Short: "Vérifie l'accessibilité d'une liste d'URLs.",
-	Long:  `La commande 'check' parcourt une liste prédéfinie d'URLs et affiche leur statut d'accessibilité en utilisant des goroutines pour la concurrence.`,
+var analyzeCmd = &cobra.Command{
+	Use:   "analyze",
+	Short: "Analyse une liste de fichiers de logs.",
+	Long:  `La commande 'analyze' lit une liste de logs depuis un fichier JSON, les analyse en parallèle et exporte un rapport.`,
 	Run: func(cmd *cobra.Command, args []string) { // La fonction `Run` est le cœur de la sous-commande.
 		// Elle est exécutée lorsque l'utilisateur tape `gowatcher check`.
 		// `cmd` représente la commande elle-même, `args` sont les arguments positionnels passés après la commande.
@@ -28,27 +28,27 @@ var checkCmd = &cobra.Command{
 			fmt.Println("Erreur: le chemin du fichier d'entrée (--input) est obligatoire.")
 			return
 		}
-
+		
 		// Charger les cibles depuis le fichier JSON d'entrée
 		targets, err := config.LoadTargetsFromFile(inputFilePath)
 		if err != nil {
-			fmt.Printf("Erreur lors du chargement des URLs: %v\n", err)
+			fmt.Printf("Erreur lors du chargement des logs: %v\n", err)
 			return
 		}
 
 		if len(targets) == 0 {
-			fmt.Println("Aucune URL à vérifier trouvée dans le fichier d'entrée.")
+			fmt.Println("0 log trouvé dans le fichier d'entrée.")
 			return
 		}
 
 		var wg sync.WaitGroup
-		resultsChan := make(chan checker.CheckResult, len(targets)) // Canal pour collecter les résultats
+		resultsChan := make(chan analyzer.LogResult, len(targets)) // Canal pour collecter les résultats
 
 		wg.Add(len(targets))
 		for _, target := range targets {
-			go func(t config.InputTarget) {
+			go func(t config.LogTarget) {
 				defer wg.Done()
-				result := checker.CheckURLSync(t)
+				result := analyzer.AnalyzeLog(t)
 				resultsChan <- result // Envoyer le resultat au canal
 			}(target)
 		}
@@ -56,22 +56,22 @@ var checkCmd = &cobra.Command{
 		wg.Wait()          // Attendre que toutes les goroutines aient fini
 		close(resultsChan) // Fermer le canal après que tous les résultats ont été envoyés
 
-		var finalReport []checker.ReportEntry
+		var finalReport []analyzer.LogResult
 		for res := range resultsChan { // Récupérer tous les résultats du canal
-			reportEntry := checker.ConvertToReportEntry(res)
-			finalReport = append(finalReport, reportEntry)
-
-			// Affichage immédiat comme avant
-			if res.Err != nil {
-				var unreachable *checker.UnreachableURLError
-				if errors.As(res.Err, &unreachable) {
-					fmt.Printf("🚫 %s (%s) est inaccessible : %v\n", res.InputTarget.Name, unreachable.URL, unreachable.Err)
+			if res.Status == "FAILED" {
+				var notfound *analyzer.FileNotFoundError
+				var parseErr *analyzer.ParseLogError
+				if errors.As(errors.New(res.ErrorDetail), &notfound) {
+					fmt.Printf("🚫 %s (%s) : %s\n", res.LogID, res.FilePath, res.Message)
+				} else if errors.As(errors.New(res.ErrorDetail), &parseErr) {
+					fmt.Printf("⚠️ %s (%s) : %s\n", res.LogID, res.FilePath, res.Message)
 				} else {
-					fmt.Printf("❌ %s (%s) : erreur - %v\n", res.InputTarget.Name, res.InputTarget.URL, res.Err)
+					fmt.Printf("❌ %s (%s) : %s - %s\n", res.LogID, res.FilePath, res.Message, res.ErrorDetail)
 				}
 			} else {
-				fmt.Printf("✅ %s (%s) : OK - %s\n", res.InputTarget.Name, res.InputTarget.URL, res.Status)
+				fmt.Printf("✅ %s (%s) : %s\n", res.LogID, res.FilePath, res.Message)
 			}
+			finalReport = append(finalReport, res)
 		}
 
 		// Exporter les résultats si outputFilePath est spécifié

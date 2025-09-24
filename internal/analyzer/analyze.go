@@ -2,70 +2,65 @@
 // Pour une meilleure clarté dans le rapport final, nous allons légèrement modifier CheckResult
 // pour inclure les champs "Name" et "Owner" dès le départ.
 
-package checker
+package analyzer
 
 import (
-	"errors"
-	"fmt"
-	"net/http"
+	"math/rand"
+	"os"
+	"strings"
 	"time"
 
 	"github.com/axellelanca/gowatcher_correction/internal/config"
 )
 
-// ReportEntry représente une entrée dans le rapport final JSON.
-type ReportEntry struct {
-	Name   string
-	URL    string
-	Owner  string
-	Status string // "OK", "Inaccessible", "Error"
-	ErrMsg string // Message d'erreur, omis si vide
+// LogResult représente le résultat de l'analyse d'un log.
+type LogResult struct {
+	LogID       string `json:"log_id"`
+	FilePath    string `json:"file_path"`
+	Status      string `json:"status"`
+	Message     string `json:"message"`
+	ErrorDetail string `json:"error_details"`
 }
 
-// CheckResult (modifié ou nouvelle version pour le workflow)
-// Cette structure peut être utilisée en interne pour le résultat immédiat.
-// Nous la convertirons en ReportEntry pour l'export.
-type CheckResult struct {
-	InputTarget config.InputTarget
-	Status      string
-	Err         error
-}
-
-func CheckURLSync(target config.InputTarget) CheckResult {
-	// Timeout court pour éviter de bloquer trop longtemps
-	client := http.Client{Timeout: 3 * time.Second}
-
-	resp, err := client.Get(target.URL)
+func AnalyzeLog(target config.LogTarget) LogResult {
+	_, err := os.Stat(target.Path)
 	if err != nil {
-		return CheckResult{
-			InputTarget: target,
-			Err:         &UnreachableURLError{URL: target.URL, Err: err},
+		return LogResult{
+			LogID:       target.ID,
+			FilePath:    target.Path,
+			Status:      "FAILED",
+			Message:     "Fichier introuvable.",
+			ErrorDetail: (&FileNotFoundError{Path: target.Path, Err: err}).Error(),
 		}
 	}
-	defer resp.Body.Close()
 
-	return CheckResult{InputTarget: target, Status: resp.Status}
-}
-
-// ConvertToCheckReport convertit un CheckResult interne en ReportEntry pour l'exportation.
-func ConvertToReportEntry(res CheckResult) ReportEntry {
-	report := ReportEntry{
-		Name:   res.InputTarget.Name,
-		URL:    res.InputTarget.URL,
-		Owner:  res.InputTarget.Owner,
-		Status: res.Status, // Statut par défaut
-	}
-
-	if res.Err != nil {
-		var unreachable *UnreachableURLError
-		if errors.As(res.Err, &unreachable) {
-			report.Status = "Inaccessible"
-			report.ErrMsg = fmt.Sprintf("Unreachable URL: %v", unreachable.Err)
-		} else {
-			report.Status = "Error"
-			report.ErrMsg = fmt.Sprintf("Erreur générique: %v", res.Err)
+	data, err := os.ReadFile(target.Path)
+	if err != nil {
+		return LogResult{
+			LogID:       target.ID,
+			FilePath:    target.Path,
+			Status:      "FAILED",
+			Message:     "Impossible de lire le fichier.",
+			ErrorDetail: err.Error(),
 		}
 	}
-	
-	return report
+
+	if strings.Contains(string(data), "INVALID") {
+		return LogResult{
+			LogID:       target.ID,
+			FilePath:    target.Path,
+			Status:      "FAILED",
+			Message:     "Erreur de parsing.",
+			ErrorDetail: (&ParseLogError{Path: target.Path, Msg: "ligne corrompue"}).Error(),
+		}
+	}
+
+	time.Sleep(time.Duration(rand.Intn(150)+50) * time.Millisecond)
+
+	return LogResult{
+		LogID:    target.ID,
+		FilePath: target.Path,
+		Status:   "OK",
+		Message:  "Analyse terminée avec succès.",
+	}
 }
