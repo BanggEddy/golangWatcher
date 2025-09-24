@@ -1,0 +1,3523 @@
+[
+  {
+    "Name": "Données en base64 (exemple)",
+    "URL": "data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==",
+    "Owner": "owner20@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==\": unsupported protocol scheme \"data\""
+  },
+  {
+    "Name": "Fichier local (exemple)",
+    "URL": "file:///C:/Users/Documents/my_local_file.txt",
+    "Owner": "owner7@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"file:///C:/Users/Documents/my_local_file.txt\": unsupported protocol scheme \"file\""
+  },
+  {
+    "Name": "URL sans protocole ni domaine (invalide)",
+    "URL": "invalid_url_without_protocol_or_domain",
+    "Owner": "owner9@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"invalid_url_without_protocol_or_domain\": unsupported protocol scheme \"\""
+  },
+  {
+    "Name": "Domaine manquant (invalide)",
+    "URL": "http:///no-domain-here.com",
+    "Owner": "owner22@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"http:///no-domain-here.com\": http: no Host in request URL"
+  },
+  {
+    "Name": "Exemple de mailto",
+    "URL": "mailto:test@example.com",
+    "Owner": "owner11@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"mailto:test@example.com\": unsupported protocol scheme \"mailto\""
+  },
+  {
+    "Name": "Mauvais protocole (exemple)",
+    "URL": "bad-protocol://some.domain.net/page",
+    "Owner": "owner14@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"bad-protocol://some.domain.net/page\": unsupported protocol scheme \"bad-protocol\""
+  },
+  {
+    "Name": "URN ISBN (exemple)",
+    "URL": "urn:isbn:0451450523",
+    "Owner": "owner24@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"urn:isbn:0451450523\": unsupported protocol scheme \"urn\""
+  },
+  {
+    "Name": "Exemple de FTP anonyme",
+    "URL": "ftp://user:pass@ftp.example.com/data/report.pdf",
+    "Owner": "owner4@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"ftp://user:***@ftp.example.com/data/report.pdf\": unsupported protocol scheme \"ftp\""
+  },
+  {
+    "Name": "Protocole malformé (exemple)",
+    "URL": "httpx://malformed.url/index.html",
+    "Owner": "owner5@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"httpx://malformed.url/index.html\": unsupported protocol scheme \"httpx\""
+  },
+  {
+    "Name": "Newsgroup C++ (exemple)",
+    "URL": "news:comp.lang.c++",
+    "Owner": "owner29@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"news:comp.lang.c++\": unsupported protocol scheme \"news\""
+  },
+  {
+    "Name": "Protocole invalide (exemple)",
+    "URL": "invalid-protocol://domain.com",
+    "Owner": "owner34@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"invalid-protocol://domain.com\": unsupported protocol scheme \"invalid-protocol\""
+  },
+  {
+    "Name": "FTP anonyme (données)",
+    "URL": "ftp://anonymous@ftp.server.org/pub/data.zip",
+    "Owner": "owner104@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"ftp://anonymous@ftp.server.org/pub/data.zip\": unsupported protocol scheme \"ftp\""
+  },
+  {
+    "Name": "Protocole incorrect (exemple)",
+    "URL": "htpps://wrong-protocol.net/file.html",
+    "Owner": "owner105@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"htpps://wrong-protocol.net/file.html\": unsupported protocol scheme \"htpps\""
+  },
+  {
+    "Name": "Fichier local Readme",
+    "URL": "file:///C:/Users/Documents/my_local_file.txt",
+    "Owner": "owner107@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"file:///C:/Users/Documents/my_local_file.txt\": unsupported protocol scheme \"file\""
+  },
+  {
+    "Name": "Chaîne URL non valide",
+    "URL": "not_a_valid_url_string_at_all",
+    "Owner": "owner109@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"not_a_valid_url_string_at_all\": unsupported protocol scheme \"\""
+  },
+  {
+    "Name": "Mail de demande d'informations",
+    "URL": "mailto:info@company.org?subject=Inquiry",
+    "Owner": "owner111@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"mailto:info@company.org?subject=Inquiry\": unsupported protocol scheme \"mailto\""
+  },
+  {
+    "Name": "Protocole invalide (exemple)",
+    "URL": "invalid://domain.com/path",
+    "Owner": "owner114@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"invalid://domain.com/path\": unsupported protocol scheme \"invalid\""
+  },
+  {
+    "Name": "Numéro de téléphone (exemple)",
+    "URL": "tel:0123456789",
+    "Owner": "owner116@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"tel:0123456789\": unsupported protocol scheme \"tel\""
+  },
+  {
+    "Name": "Port manquant (invalide)",
+    "URL": "http://domain.com:port/path",
+    "Owner": "owner118@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: parse \"http://domain.com:port/path\": invalid port \":port\" after host"
+  },
+  {
+    "Name": "Image PNG en base64 (exemple)",
+    "URL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",
+    "Owner": "owner120@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=\": unsupported protocol scheme \"data\""
+  },
+  {
+    "Name": "Caractères invalides (exemple)",
+    "URL": "http://invalid-chars^.com/",
+    "Owner": "owner122@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: parse \"http://invalid-chars^.com/\": invalid character \"^\" in host name"
+  },
+  {
+    "Name": "URN UUID (exemple)",
+    "URL": "urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "Owner": "owner124@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6\": unsupported protocol scheme \"urn\""
+  },
+  {
+    "Name": "URL avec identifiants (exemple)",
+    "URL": "http://user:pass@host:port/path",
+    "Owner": "owner127@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: parse \"http://user:pass@host:port/path\": invalid port \":port\" after host"
+  },
+  {
+    "Name": "Newsgroup Python (exemple)",
+    "URL": "news:alt.comp.lang.python",
+    "Owner": "owner130@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"news:alt.comp.lang.python\": unsupported protocol scheme \"news\""
+  },
+  {
+    "Name": "Numéro de téléphone (exemple)",
+    "URL": "tel:+1-555-123-4567",
+    "Owner": "owner16@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"tel:+1-555-123-4567\": unsupported protocol scheme \"tel\""
+  },
+  {
+    "Name": "URL avec espace (invalide)",
+    "URL": "invalid_url_with_space in it",
+    "Owner": "owner134@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"invalid_url_with_space%20in%20it\": unsupported protocol scheme \"\""
+  },
+  {
+    "Name": "URL de domaine invalide (exemple)",
+    "URL": "invalid.url.com/path",
+    "Owner": "owner18@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"invalid.url.com/path\": unsupported protocol scheme \"\""
+  },
+  {
+    "Name": "Nom d'hôte invalide",
+    "URL": "invalid-host-name",
+    "Owner": "owner128@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"invalid-host-name\": unsupported protocol scheme \"\""
+  },
+  {
+    "Name": "Domaine invalide (points) (exemple)",
+    "URL": "http://invalid..domain.com/path",
+    "Owner": "owner102@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"http://invalid..domain.com/path\": dial tcp: lookup invalid..domain.com: no such host"
+  },
+  {
+    "Name": "Domaine invalide (point) (exemple)",
+    "URL": "http://.invalid.com/",
+    "Owner": "owner27@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"http://.invalid.com/\": dial tcp: lookup .invalid.com: no such host"
+  },
+  {
+    "Name": "Idées de décoration intérieure (salon)",
+    "URL": "https://www.home.decor/ideas/living-room",
+    "Owner": "owner167@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.decor/ideas/living-room\": dial tcp: lookup www.home.decor: no such host"
+  },
+  {
+    "Name": "Idées de décoration intérieure DIY",
+    "URL": "https://www.diy.home/decor/ideas",
+    "Owner": "owner354@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.home/decor/ideas\": dial tcp: lookup www.diy.home: no such host"
+  },
+  {
+    "Name": "Réparation de plomberie (DIY maison)",
+    "URL": "https://www.diy.home/repair/plumbing",
+    "Owner": "owner244@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.home/repair/plumbing\": dial tcp: lookup www.diy.home: no such host"
+  },
+  {
+    "Name": "Réparation de toit (DIY maison)",
+    "URL": "https://www.diy.home/repair/roof",
+    "Owner": "owner398@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.home/repair/roof\": dial tcp: lookup www.diy.home: no such host"
+  },
+  {
+    "Name": "Tutoriel de retouche photo (Lightroom)",
+    "URL": "https://www.photography.editing/tutorial/lightroom",
+    "Owner": "owner397@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.editing/tutorial/lightroom\": dial tcp: lookup www.photography.editing: no such host"
+  },
+  {
+    "Name": "Logiciel de retouche photo (Photoshop)",
+    "URL": "https://www.photography.editing/software/photoshop",
+    "Owner": "owner243@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.editing/software/photoshop\": dial tcp: lookup www.photography.editing: no such host"
+  },
+  {
+    "Name": "Article de magazine en ligne (technologie)",
+    "URL": "https://www.online.magazine/article/technology",
+    "Owner": "owner239@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.magazine/article/technology\": dial tcp: lookup www.online.magazine: no such host"
+  },
+  {
+    "Name": "Article de magazine en ligne (science)",
+    "URL": "https://www.online.magazine/article/science",
+    "Owner": "owner393@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.magazine/article/science\": dial tcp: lookup www.online.magazine: no such host"
+  },
+  {
+    "Name": "Faits historiques (Grèce antique)",
+    "URL": "https://www.history.facts/ancient/greece",
+    "Owner": "owner402@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.facts/ancient/greece\": dial tcp: lookup www.history.facts: no such host"
+  },
+  {
+    "Name": "Faits historiques (guerre mondiale)",
+    "URL": "https://www.history.facts/world/war",
+    "Owner": "owner248@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.facts/world/war\": dial tcp: lookup www.history.facts: no such host"
+  },
+  {
+    "Name": "Portfolio de nouveau designer (design de mode)",
+    "URL": "https://www.fashion.design/portfolio/new-designer",
+    "Owner": "owner324@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.design/portfolio/new-designer\": dial tcp: lookup www.fashion.design: no such host"
+  },
+  {
+    "Name": "Cours de design de mode en ligne",
+    "URL": "https://www.fashion.design/course/online",
+    "Owner": "owner478@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.design/course/online\": dial tcp: lookup www.fashion.design: no such host"
+  },
+  {
+    "Name": "Nouveaux jeux de console",
+    "URL": "https://www.gaming.console/games/new",
+    "Owner": "owner472@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.console/games/new\": dial tcp: lookup www.gaming.console: no such host"
+  },
+  {
+    "Name": "Accessoires de contrôleur de console de jeu",
+    "URL": "https://www.gaming.console/accessories/controller",
+    "Owner": "owner318@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.console/accessories/controller\": dial tcp: lookup www.gaming.console: no such host"
+  },
+  {
+    "Name": "Domaine invalide (exemple)",
+    "URL": "http://invalid-domain!.com/path/to/file.php",
+    "Owner": "owner2@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"http://invalid-domain!.com/path/to/file.php\": dial tcp: lookup invalid-domain!.com: no such host"
+  },
+  {
+    "Name": "Recherche d'observatoire spatial (galaxie)",
+    "URL": "https://www.space.observatory/research/galaxy",
+    "Owner": "owner213@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.observatory/research/galaxy\": dial tcp: lookup www.space.observatory: no such host"
+  },
+  {
+    "Name": "Télescope Webb (observatoire spatial)",
+    "URL": "https://www.space.observatory/telescope/webb",
+    "Owner": "owner367@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.observatory/telescope/webb\": dial tcp: lookup www.space.observatory: no such host"
+  },
+  {
+    "Name": "Semaine de la mode (Paris)",
+    "URL": "https://www.fashion.events/week/paris",
+    "Owner": "owner412@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.events/week/paris\": dial tcp: lookup www.fashion.events: no such host"
+  },
+  {
+    "Name": "Défilé de mode (Paris)",
+    "URL": "https://www.fashion.events/show/paris",
+    "Owner": "owner258@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.events/show/paris\": dial tcp: lookup www.fashion.events: no such host"
+  },
+  {
+    "Name": "Cours de photographie avancé (portraits)",
+    "URL": "https://www.photography.course/advanced/portraits",
+    "Owner": "owner375@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.course/advanced/portraits\": dial tcp: lookup www.photography.course: no such host"
+  },
+  {
+    "Name": "Tutoriel de photographie (conseils pour débutants)",
+    "URL": "https://www.photography.course/beginner/tips",
+    "Owner": "owner221@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.course/beginner/tips\": dial tcp: lookup www.photography.course: no such host"
+  },
+  {
+    "Name": "Biographie d'auteur de livre célèbre",
+    "URL": "https://www.book.author/biography/famous",
+    "Owner": "owner404@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.author/biography/famous\": dial tcp: lookup www.book.author: no such host"
+  },
+  {
+    "Name": "Nouvelle sortie d'auteur de livre",
+    "URL": "https://www.book.author/page/new-release",
+    "Owner": "owner250@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.author/page/new-release\": dial tcp: lookup www.book.author: no such host"
+  },
+  {
+    "Name": "Voitures d'occasion (concessionnaire automobile)",
+    "URL": "https://www.car.dealership/used/cars",
+    "Owner": "owner496@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.dealership/used/cars\": dial tcp: lookup www.car.dealership: no such host"
+  },
+  {
+    "Name": "Inventaire de concessionnaire automobile (occasion)",
+    "URL": "https://www.car.dealership/used/inventory",
+    "Owner": "owner188@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.dealership/used/inventory\": dial tcp: lookup www.car.dealership: no such host"
+  },
+  {
+    "Name": "Nouveaux modèles de concessionnaire automobile",
+    "URL": "https://www.car.dealership/new/models",
+    "Owner": "owner342@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.dealership/new/models\": dial tcp: lookup www.car.dealership: no such host"
+  },
+  {
+    "Name": "Critique de gadget technologique (montre connectée)",
+    "URL": "https://www.tech.gadgets/review/smartwatch",
+    "Owner": "owner391@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.gadgets/review/smartwatch\": dial tcp: lookup www.tech.gadgets: no such host"
+  },
+  {
+    "Name": "Critique de gadget technologique (smartphone)",
+    "URL": "https://www.tech.gadgets/review/smartphone",
+    "Owner": "owner237@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.gadgets/review/smartphone\": dial tcp: lookup www.tech.gadgets: no such host"
+  },
+  {
+    "Name": "Tableau de bord local (exemple)",
+    "URL": "http://localhost:3000/app/dashboard",
+    "Owner": "owner33@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"http://localhost:3000/app/dashboard\": dial tcp [::1]:3000: connect: connection refused"
+  },
+  {
+    "Name": "API utilisateur (exemple)",
+    "URL": "https://api.service.com/v1/users/123",
+    "Owner": "owner108@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://api.service.com/v1/users/123\": dial tcp: lookup api.service.com: no such host"
+  },
+  {
+    "Name": "Magazine technologique (innovations futures)",
+    "URL": "https://www.tech.magazine/future/innovations",
+    "Owner": "owner215@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.magazine/future/innovations\": dial tcp: lookup www.tech.magazine: no such host"
+  },
+  {
+    "Name": "Magazine technologique (futur de l'IA)",
+    "URL": "https://www.tech.magazine/ai/future",
+    "Owner": "owner369@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.magazine/ai/future\": dial tcp: lookup www.tech.magazine: no such host"
+  },
+  {
+    "Name": "Caméra de sécurité extérieure (domicile)",
+    "URL": "https://www.home.security/camera/outdoor",
+    "Owner": "owner299@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.security/camera/outdoor\": dial tcp: lookup www.home.security: no such host"
+  },
+  {
+    "Name": "Installation de système de sécurité domestique",
+    "URL": "https://www.home.security/system/installation",
+    "Owner": "owner233@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.security/system/installation\": dial tcp: lookup www.home.security: no such host"
+  },
+  {
+    "Name": "Système d'alarme de sécurité domestique",
+    "URL": "https://www.home.security/alarm/system",
+    "Owner": "owner387@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.security/alarm/system\": dial tcp: lookup www.home.security: no such host"
+  },
+  {
+    "Name": "Système de sécurité domestique intelligent",
+    "URL": "https://www.home.security/system/smart",
+    "Owner": "owner453@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.security/system/smart\": dial tcp: lookup www.home.security: no such host"
+  },
+  {
+    "Name": "Entraînement d'astronaute (exploration spatiale)",
+    "URL": "https://www.space.exploration/astronaut/training",
+    "Owner": "owner499@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.exploration/astronaut/training\": dial tcp: lookup www.space.exploration: no such host"
+  },
+  {
+    "Name": "Lancement de fusée (exploration spatiale)",
+    "URL": "https://www.space.exploration/rocket/launch",
+    "Owner": "owner345@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.exploration/rocket/launch\": dial tcp: lookup www.space.exploration: no such host"
+  },
+  {
+    "Name": "Télescope spatial (Hubble)",
+    "URL": "https://www.space.exploration/telescope/hubble",
+    "Owner": "owner191@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.exploration/telescope/hubble\": dial tcp: lookup www.space.exploration: no such host"
+  },
+  {
+    "Name": "Futures missions d'exploration spatiale",
+    "URL": "https://www.space.exploration/future/missions",
+    "Owner": "owner455@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.exploration/future/missions\": dial tcp: lookup www.space.exploration: no such host"
+  },
+  {
+    "Name": "Rover d'exploration spatiale (Mars)",
+    "URL": "https://www.space.exploration/rover/mars",
+    "Owner": "owner301@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.exploration/rover/mars\": dial tcp: lookup www.space.exploration: no such host"
+  },
+  {
+    "Name": "Détails de film (base de données)",
+    "URL": "https://www.movie.database/film/details",
+    "Owner": "owner163@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.database/film/details\": dial tcp: lookup www.movie.database: no such host"
+  },
+  {
+    "Name": "Modèle de voiture électrique (fabricant)",
+    "URL": "https://www.car.manufacturer/model/electric",
+    "Owner": "owner166@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.manufacturer/model/electric\": dial tcp: lookup www.car.manufacturer: no such host"
+  },
+  {
+    "Name": "Cours de programmation en ligne (Python)",
+    "URL": "https://www.online.course/programming/python",
+    "Owner": "owner173@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.course/programming/python\": dial tcp: lookup www.online.course: no such host"
+  },
+  {
+    "Name": "Cours de marketing numérique en ligne",
+    "URL": "https://www.online.course/marketing/digital",
+    "Owner": "owner305@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.course/marketing/digital\": dial tcp: lookup www.online.course: no such host"
+  },
+  {
+    "Name": "Cours de design graphique en ligne",
+    "URL": "https://www.online.course/design/graphic",
+    "Owner": "owner459@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.course/design/graphic\": dial tcp: lookup www.online.course: no such host"
+  },
+  {
+    "Name": "Podcast d'histoire (temps médiévaux)",
+    "URL": "https://www.history.podcast/medieval/times",
+    "Owner": "owner446@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.podcast/medieval/times\": dial tcp: lookup www.history.podcast: no such host"
+  },
+  {
+    "Name": "Podcast d'histoire (Seconde Guerre mondiale)",
+    "URL": "https://www.history.podcast/episode/ww2",
+    "Owner": "owner182@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.podcast/episode/ww2\": dial tcp: lookup www.history.podcast: no such host"
+  },
+  {
+    "Name": "Podcast d'histoire (civilisations anciennes)",
+    "URL": "https://www.history.podcast/ancient/civilizations",
+    "Owner": "owner292@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.podcast/ancient/civilizations\": dial tcp: lookup www.history.podcast: no such host"
+  },
+  {
+    "Name": "Programme de conférence technologique (jour 1)",
+    "URL": "https://www.tech.conference/schedule/day1",
+    "Owner": "owner171@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.conference/schedule/day1\": dial tcp: lookup www.tech.conference: no such host"
+  },
+  {
+    "Name": "Guide de stratégie de jeu (FPS)",
+    "URL": "https://www.gaming.strategy/guide/fps",
+    "Owner": "owner428@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.strategy/guide/fps\": dial tcp: lookup www.gaming.strategy: no such host"
+  },
+  {
+    "Name": "Guide de stratégie de jeu (RPG)",
+    "URL": "https://www.gaming.strategy/guide/rpg",
+    "Owner": "owner274@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.strategy/guide/rpg\": dial tcp: lookup www.gaming.strategy: no such host"
+  },
+  {
+    "Name": "Ressource de sous-domaine",
+    "URL": "https://sub.domain.co.uk/resource?param=value",
+    "Owner": "owner103@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://sub.domain.co.uk/resource?param=value\": dial tcp: lookup sub.domain.co.uk: no such host"
+  },
+  {
+    "Name": "Application de pleine conscience (bien-être)",
+    "URL": "https://www.health.wellness/mindfulness/app",
+    "Owner": "owner385@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.health.wellness/mindfulness/app\": dial tcp: lookup www.health.wellness: no such host"
+  },
+  {
+    "Name": "Guide de méditation (bien-être)",
+    "URL": "https://www.health.wellness/meditation/guide",
+    "Owner": "owner231@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.health.wellness/meditation/guide\": dial tcp: lookup www.health.wellness: no such host"
+  },
+  {
+    "Name": "Service de streaming de films (comédie)",
+    "URL": "https://www.movie.streaming/service/comedy",
+    "Owner": "owner361@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.streaming/service/comedy\": dial tcp: lookup www.movie.streaming: no such host"
+  },
+  {
+    "Name": "Service de streaming de films (action)",
+    "URL": "https://www.movie.streaming/service/action",
+    "Owner": "owner207@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.streaming/service/action\": dial tcp: lookup www.movie.streaming: no such host"
+  },
+  {
+    "Name": "Meubles de chambre (amélioration de l'habitat)",
+    "URL": "https://www.home.improvement/bedroom/furniture",
+    "Owner": "owner497@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.improvement/bedroom/furniture\": dial tcp: lookup www.home.improvement: no such host"
+  },
+  {
+    "Name": "Carrelage de salle de bain (amélioration de l'habitat)",
+    "URL": "https://www.home.improvement/bathroom/tiles",
+    "Owner": "owner343@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.improvement/bathroom/tiles\": dial tcp: lookup www.home.improvement: no such host"
+  },
+  {
+    "Name": "Rénovation de cuisine (amélioration de l'habitat)",
+    "URL": "https://www.home.improvement/kitchen/renovation",
+    "Owner": "owner189@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.improvement/kitchen/renovation\": dial tcp: lookup www.home.improvement: no such host"
+  },
+  {
+    "Name": "Image de galaxie (télescope spatial)",
+    "URL": "https://www.space.telescope/image/galaxy",
+    "Owner": "owner389@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.telescope/image/galaxy\": dial tcp: lookup www.space.telescope: no such host"
+  },
+  {
+    "Name": "Image de nébuleuse (télescope spatial)",
+    "URL": "https://www.space.telescope/image/nebula",
+    "Owner": "owner235@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.telescope/image/nebula\": dial tcp: lookup www.space.telescope: no such host"
+  },
+  {
+    "Name": "Rapport d'actualités d'agence environnementale",
+    "URL": "https://www.environmental.agency/news/report",
+    "Owner": "owner366@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.agency/news/report\": dial tcp: lookup www.environmental.agency: no such host"
+  },
+  {
+    "Name": "Rapport d'agence environnementale (pollution)",
+    "URL": "https://www.environmental.agency/report/pollution",
+    "Owner": "owner212@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.agency/report/pollution\": dial tcp: lookup www.environmental.agency: no such host"
+  },
+  {
+    "Name": "Guide de configuration du fournisseur de cloud",
+    "URL": "https://docs.cloudprovider.com/guide/setup",
+    "Owner": "owner112@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://docs.cloudprovider.com/guide/setup\": dial tcp: lookup docs.cloudprovider.com: no such host"
+  },
+  {
+    "Name": "Meilleures chansons d'artiste (classements musicaux)",
+    "URL": "https://www.music.charts/artist/top-songs",
+    "Owner": "owner373@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.charts/artist/top-songs\": dial tcp: lookup www.music.charts: no such host"
+  },
+  {
+    "Name": "Top des hits musicaux",
+    "URL": "https://www.music.charts/top/hits",
+    "Owner": "owner219@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.charts/top/hits\": dial tcp: lookup www.music.charts: no such host"
+  },
+  {
+    "Name": "Nouvel album d'artiste (label de musique)",
+    "URL": "https://www.music.label/artist/new-album",
+    "Owner": "owner175@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.label/artist/new-album\": dial tcp: lookup www.music.label: no such host"
+  },
+  {
+    "Name": "Conseils financiers (planification de la retraite)",
+    "URL": "https://www.finance.advice/retirement/planning",
+    "Owner": "owner181@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.advice/retirement/planning\": dial tcp: lookup www.finance.advice: no such host"
+  },
+  {
+    "Name": "Bande-annonce de film (documentaire)",
+    "URL": "https://www.movie.trailer/genre/documentary",
+    "Owner": "owner493@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.trailer/genre/documentary\": dial tcp: lookup www.movie.trailer: no such host"
+  },
+  {
+    "Name": "Bande-annonce de film à venir (action)",
+    "URL": "https://www.movie.trailer/upcoming/action",
+    "Owner": "owner229@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.trailer/upcoming/action\": dial tcp: lookup www.movie.trailer: no such host"
+  },
+  {
+    "Name": "Bande-annonce de film (horreur)",
+    "URL": "https://www.movie.trailer/genre/horror",
+    "Owner": "owner339@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.trailer/genre/horror\": dial tcp: lookup www.movie.trailer: no such host"
+  },
+  {
+    "Name": "Bande-annonce de film à venir (comédie)",
+    "URL": "https://www.movie.trailer/upcoming/comedy",
+    "Owner": "owner383@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.trailer/upcoming/comedy\": dial tcp: lookup www.movie.trailer: no such host"
+  },
+  {
+    "Name": "Changement climatique (recherche environnementale)",
+    "URL": "https://www.environmental.research/climate/change",
+    "Owner": "owner410@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.research/climate/change\": dial tcp: lookup www.environmental.research: no such host"
+  },
+  {
+    "Name": "Étude sur la pollution (recherche environnementale)",
+    "URL": "https://www.environmental.research/study/pollution",
+    "Owner": "owner256@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.research/study/pollution\": dial tcp: lookup www.environmental.research: no such host"
+  },
+  {
+    "Name": "Guide de plantation (calendrier de jardinage)",
+    "URL": "https://www.gardening.calendar/planting/guide",
+    "Owner": "owner400@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gardening.calendar/planting/guide\": dial tcp: lookup www.gardening.calendar: no such host"
+  },
+  {
+    "Name": "Tâches du calendrier de jardinage (juin)",
+    "URL": "https://www.gardening.calendar/tasks/june",
+    "Owner": "owner246@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gardening.calendar/tasks/june\": dial tcp: lookup www.gardening.calendar: no such host"
+  },
+  {
+    "Name": "Parc national (conservation environnementale)",
+    "URL": "https://www.environmental.conservation/park/national",
+    "Owner": "owner388@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.conservation/park/national\": dial tcp: lookup www.environmental.conservation: no such host"
+  },
+  {
+    "Name": "Protection de la faune (conservation environnementale)",
+    "URL": "https://www.environmental.conservation/wildlife/protection",
+    "Owner": "owner234@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.conservation/wildlife/protection\": dial tcp: lookup www.environmental.conservation: no such host"
+  },
+  {
+    "Name": "Leçons de piano (instrument de musique)",
+    "URL": "https://www.music.instrument/piano/lessons",
+    "Owner": "owner395@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.instrument/piano/lessons\": dial tcp: lookup www.music.instrument: no such host"
+  },
+  {
+    "Name": "Leçons de guitare (instrument de musique)",
+    "URL": "https://www.music.instrument/guitar/lessons",
+    "Owner": "owner241@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.instrument/guitar/lessons\": dial tcp: lookup www.music.instrument: no such host"
+  },
+  {
+    "Name": "Tendance de magazine de mode (été)",
+    "URL": "https://www.fashion.magazine/trend/summer",
+    "Owner": "owner170@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.magazine/trend/summer\": dial tcp: lookup www.fashion.magazine: no such host"
+  },
+  {
+    "Name": "Réseau de fournisseurs d'assurance maladie",
+    "URL": "https://www.health.insurance/provider/network",
+    "Owner": "owner297@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.health.insurance/provider/network\": dial tcp: lookup www.health.insurance: no such host"
+  },
+  {
+    "Name": "Détails du plan d'assurance maladie",
+    "URL": "https://www.health.insurance/plan/details",
+    "Owner": "owner209@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.health.insurance/plan/details\": dial tcp: lookup www.health.insurance: no such host"
+  },
+  {
+    "Name": "Comparer les plans d'assurance maladie",
+    "URL": "https://www.health.insurance/plans/compare",
+    "Owner": "owner451@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.health.insurance/plans/compare\": dial tcp: lookup www.health.insurance: no such host"
+  },
+  {
+    "Name": "Soumission de réclamation d'assurance maladie",
+    "URL": "https://www.health.insurance/claim/submission",
+    "Owner": "owner363@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.health.insurance/claim/submission\": dial tcp: lookup www.health.insurance: no such host"
+  },
+  {
+    "Name": "Critique de véhicules électriques (voiture)",
+    "URL": "https://www.car.review/electric/vehicles",
+    "Owner": "owner364@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.review/electric/vehicles\": dial tcp: lookup www.car.review: no such host"
+  },
+  {
+    "Name": "Critique de modèle de voiture (nouvelle sortie)",
+    "URL": "https://www.car.review/model/new-release",
+    "Owner": "owner210@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.review/model/new-release\": dial tcp: lookup www.car.review: no such host"
+  },
+  {
+    "Name": "Magazine culinaire (cuisine italienne)",
+    "URL": "https://www.food.magazine/cuisine/italian",
+    "Owner": "owner194@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.food.magazine/cuisine/italian\": dial tcp: lookup www.food.magazine: no such host"
+  },
+  {
+    "Name": "Recettes saines (magazine culinaire)",
+    "URL": "https://www.food.magazine/healthy/recipes",
+    "Owner": "owner348@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.food.magazine/healthy/recipes\": dial tcp: lookup www.food.magazine: no such host"
+  },
+  {
+    "Name": "Cotes de paris sportifs (football)",
+    "URL": "https://www.sports.betting/odds/football",
+    "Owner": "owner242@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.sports.betting/odds/football\": dial tcp: lookup www.sports.betting: no such host"
+  },
+  {
+    "Name": "Conseils de paris sportifs (basket-ball)",
+    "URL": "https://www.sports.betting/tips/basketball",
+    "Owner": "owner396@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.sports.betting/tips/basketball\": dial tcp: lookup www.sports.betting: no such host"
+  },
+  {
+    "Name": "Interview de magazine de créateur de mode",
+    "URL": "https://www.fashion.designer/magazine/interview",
+    "Owner": "owner346@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.designer/magazine/interview\": dial tcp: lookup www.fashion.designer: no such host"
+  },
+  {
+    "Name": "Collection d'hiver de créateur de mode",
+    "URL": "https://www.fashion.designer/collection/winter",
+    "Owner": "owner192@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.designer/collection/winter\": dial tcp: lookup www.fashion.designer: no such host"
+  },
+  {
+    "Name": "Collection d'été de créateur de mode",
+    "URL": "https://www.fashion.designer/collection/summer",
+    "Owner": "owner500@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.designer/collection/summer\": dial tcp: lookup www.fashion.designer: no such host"
+  },
+  {
+    "Name": "Traitement des blessures (médecine sportive)",
+    "URL": "https://www.sports.medicine/injury/treatment",
+    "Owner": "owner286@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.sports.medicine/injury/treatment\": dial tcp: lookup www.sports.medicine: no such host"
+  },
+  {
+    "Name": "Exercices de rééducation (médecine sportive)",
+    "URL": "https://www.sports.medicine/rehabilitation/exercises",
+    "Owner": "owner440@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.sports.medicine/rehabilitation/exercises\": dial tcp: lookup www.sports.medicine: no such host"
+  },
+  {
+    "Name": "Club de lecture (genre mystère)",
+    "URL": "https://www.book.club/genre/mystery",
+    "Owner": "owner294@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.club/genre/mystery\": dial tcp: lookup www.book.club: no such host"
+  },
+  {
+    "Name": "Discussion de club de lecture (roman)",
+    "URL": "https://www.book.club/discussion/novel",
+    "Owner": "owner162@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.club/discussion/novel\": dial tcp: lookup www.book.club: no such host"
+  },
+  {
+    "Name": "Club de lecture (genre science-fiction)",
+    "URL": "https://www.book.club/genre/sci-fi",
+    "Owner": "owner448@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.club/genre/sci-fi\": dial tcp: lookup www.book.club: no such host"
+  },
+  {
+    "Name": "Filmographie de réalisateur (science-fiction)",
+    "URL": "https://www.movie.director/filmography/sci-fi",
+    "Owner": "owner273@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.director/filmography/sci-fi\": dial tcp: lookup www.movie.director: no such host"
+  },
+  {
+    "Name": "Filmographie de réalisateur (drame)",
+    "URL": "https://www.movie.director/filmography/drama",
+    "Owner": "owner427@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.director/filmography/drama\": dial tcp: lookup www.movie.director: no such host"
+  },
+  {
+    "Name": "Conseils de magazine de jardinage (débutants)",
+    "URL": "https://www.gardening.magazine/tips/beginners",
+    "Owner": "owner422@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gardening.magazine/tips/beginners\": dial tcp: lookup www.gardening.magazine: no such host"
+  },
+  {
+    "Name": "Article de magazine de jardinage (fleurs)",
+    "URL": "https://www.gardening.magazine/article/flowers",
+    "Owner": "owner268@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gardening.magazine/article/flowers\": dial tcp: lookup www.gardening.magazine: no such host"
+  },
+  {
+    "Name": "Article de journal scientifique (physique)",
+    "URL": "https://www.science.journal/article/physics",
+    "Owner": "owner145@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.science.journal/article/physics\": dial tcp: lookup www.science.journal: no such host"
+  },
+  {
+    "Name": "Tutoriel de photographie (règles de composition)",
+    "URL": "https://www.photography.tutorial/composition/rules",
+    "Owner": "owner485@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.tutorial/composition/rules\": dial tcp: lookup www.photography.tutorial: no such host"
+  },
+  {
+    "Name": "Tutoriel de photographie (éclairage de studio)",
+    "URL": "https://www.photography.tutorial/lighting/studio",
+    "Owner": "owner331@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.tutorial/lighting/studio\": dial tcp: lookup www.photography.tutorial: no such host"
+  },
+  {
+    "Name": "Projet de menuiserie DIY (table)",
+    "URL": "https://www.diy.woodworking/project/table",
+    "Owner": "owner332@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.woodworking/project/table\": dial tcp: lookup www.diy.woodworking: no such host"
+  },
+  {
+    "Name": "Scie (outils de menuiserie DIY)",
+    "URL": "https://www.diy.woodworking/tools/saw",
+    "Owner": "owner486@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.woodworking/tools/saw\": dial tcp: lookup www.diy.woodworking: no such host"
+  },
+  {
+    "Name": "Critique de livre (fiction, thriller)",
+    "URL": "https://www.book.review/fiction/thriller",
+    "Owner": "owner338@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.review/fiction/thriller\": http: server gave HTTP response to HTTPS client"
+  },
+  {
+    "Name": "Critique de livre (auteur classique)",
+    "URL": "https://www.book.review/author/classic",
+    "Owner": "owner184@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.review/author/classic\": http: server gave HTTP response to HTTPS client"
+  },
+  {
+    "Name": "Critique de livre (fiction, romance)",
+    "URL": "https://www.book.review/fiction/romance",
+    "Owner": "owner492@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.review/fiction/romance\": http: server gave HTTP response to HTTPS client"
+  },
+  {
+    "Name": "Profil d'équipe d'esports",
+    "URL": "https://www.gaming.esports/team/profile",
+    "Owner": "owner362@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.esports/team/profile\": dial tcp: lookup www.gaming.esports: no such host"
+  },
+  {
+    "Name": "Résultats de tournoi d'esports",
+    "URL": "https://www.gaming.esports/tournament/results",
+    "Owner": "owner208@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.esports/tournament/results\": dial tcp: lookup www.gaming.esports: no such host"
+  },
+  {
+    "Name": "Test de langue (français DELF)",
+    "URL": "https://www.language.test/french/delf",
+    "Owner": "owner469@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.test/french/delf\": dial tcp: lookup www.language.test: no such host"
+  },
+  {
+    "Name": "Test de langue (anglais IELTS)",
+    "URL": "https://www.language.test/english/ielts",
+    "Owner": "owner315@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.test/english/ielts\": dial tcp: lookup www.language.test: no such host"
+  },
+  {
+    "Name": "Multithreading Python sur Javatpoint",
+    "URL": "https://www.javatpoint.com/python-multithreading",
+    "Owner": "owner56@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.javatpoint.com/python-multithreading\": dial tcp: lookup www.javatpoint.com: no such host"
+  },
+  {
+    "Name": "Multithreading Java Javatpoint",
+    "URL": "https://www.javatpoint.com/java-multithreading",
+    "Owner": "owner32@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.javatpoint.com/java-multithreading\": dial tcp: lookup www.javatpoint.com: no such host"
+  },
+  {
+    "Name": "Statistiques d'équipe de ligue sportive",
+    "URL": "https://www.sports.league/team/stats",
+    "Owner": "owner154@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.sports.league/team/stats\": dial tcp: lookup www.sports.league: no such host"
+  },
+  {
+    "Name": "Types d'assurance voyage (annulation de voyage)",
+    "URL": "https://www.travel.insurance/types/trip-cancellation",
+    "Owner": "owner438@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.travel.insurance/types/trip-cancellation\": dial tcp: lookup www.travel.insurance: no such host"
+  },
+  {
+    "Name": "Classement de ligue de football",
+    "URL": "https://www.sports.league/soccer/standings",
+    "Owner": "owner462@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.sports.league/soccer/standings\": dial tcp: lookup www.sports.league: no such host"
+  },
+  {
+    "Name": "Détails de la politique d'assurance voyage",
+    "URL": "https://www.travel.insurance/policy/details",
+    "Owner": "owner284@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.travel.insurance/policy/details\": dial tcp: lookup www.travel.insurance: no such host"
+  },
+  {
+    "Name": "Classement de ligue de basket-ball",
+    "URL": "https://www.sports.league/basketball/standings",
+    "Owner": "owner308@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.sports.league/basketball/standings\": dial tcp: lookup www.sports.league: no such host"
+  },
+  {
+    "Name": "Nourriture pour animaux (sans céréales)",
+    "URL": "https://www.pet.food/diet/grain-free",
+    "Owner": "owner421@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.food/diet/grain-free\": http: server gave HTTP response to HTTPS client"
+  },
+  {
+    "Name": "Bibliothèque Asyncio Python",
+    "URL": "https://docs.python.org/3/library/asyncio.html",
+    "Owner": "owner51@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Nourriture pour animaux (marque premium)",
+    "URL": "https://www.pet.food/brand/premium",
+    "Owner": "owner267@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.food/brand/premium\": http: server gave HTTP response to HTTPS client"
+  },
+  {
+    "Name": "Cours de mathématiques sur plateforme éducative",
+    "URL": "https://www.education.platform/course/math",
+    "Owner": "owner151@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.education.platform/course/math\": dial tcp: lookup www.education.platform: no such host"
+  },
+  {
+    "Name": "Offres d'emploi de l'équipe de production cinématographique",
+    "URL": "https://www.movie.production/crew/jobs",
+    "Owner": "owner449@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.production/crew/jobs\": dial tcp: lookup www.movie.production: no such host"
+  },
+  {
+    "Name": "Studio de production cinématographique (Hollywood)",
+    "URL": "https://www.movie.production/studio/hollywood",
+    "Owner": "owner295@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.production/studio/hollywood\": dial tcp: lookup www.movie.production: no such host"
+  },
+  {
+    "Name": "Dernier numéro de magazine de photographie",
+    "URL": "https://www.photography.magazine/issue/latest",
+    "Owner": "owner309@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.magazine/issue/latest\": dial tcp: lookup www.photography.magazine: no such host"
+  },
+  {
+    "Name": "Conseils de magazine de photographie (portraits)",
+    "URL": "https://www.photography.magazine/tips/portraits",
+    "Owner": "owner463@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.magazine/tips/portraits\": dial tcp: lookup www.photography.magazine: no such host"
+  },
+  {
+    "Name": "Collier de bijoux (accessoires de mode)",
+    "URL": "https://www.fashion.accessories/jewelry/necklace",
+    "Owner": "owner280@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.accessories/jewelry/necklace\": dial tcp: lookup www.fashion.accessories: no such host"
+  },
+  {
+    "Name": "Sacs à main (accessoires de mode)",
+    "URL": "https://www.fashion.accessories/bags/handbags",
+    "Owner": "owner434@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.accessories/bags/handbags\": dial tcp: lookup www.fashion.accessories: no such host"
+  },
+  {
+    "Name": "Programme d'entretien automobile (service)",
+    "URL": "https://www.car.maintenance/schedule/service",
+    "Owner": "owner452@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.maintenance/schedule/service\": dial tcp: lookup www.car.maintenance: no such host"
+  },
+  {
+    "Name": "Conseils d'entretien automobile (vidange)",
+    "URL": "https://www.car.maintenance/tips/oil-change",
+    "Owner": "owner298@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.maintenance/tips/oil-change\": dial tcp: lookup www.car.maintenance: no such host"
+  },
+  {
+    "Name": "Événement de chronologie historique (Première Guerre mondiale)",
+    "URL": "https://www.history.timeline/event/world-war-i",
+    "Owner": "owner468@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.timeline/event/world-war-i\": dial tcp: lookup www.history.timeline: no such host"
+  },
+  {
+    "Name": "Événement de chronologie historique (Renaissance)",
+    "URL": "https://www.history.timeline/event/renaissance",
+    "Owner": "owner314@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.timeline/event/renaissance\": dial tcp: lookup www.history.timeline: no such host"
+  },
+  {
+    "Name": "Exemple de threading Python sur Guru99",
+    "URL": "https://www.guru99.com/python-threading-example.html",
+    "Owner": "owner55@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de jardinage (rose)",
+    "URL": "https://www.gardening.blog/flower/rose",
+    "Owner": "owner356@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gardening.blog/flower/rose\": dial tcp: lookup www.gardening.blog: no such host"
+  },
+  {
+    "Name": "Blog de jardinage (tomate)",
+    "URL": "https://www.gardening.blog/vegetable/tomato",
+    "Owner": "owner202@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gardening.blog/vegetable/tomato\": dial tcp: lookup www.gardening.blog: no such host"
+  },
+  {
+    "Name": "Devis d'assurance pour chat (animaux)",
+    "URL": "https://www.pet.insurance/quote/cat",
+    "Owner": "owner311@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.insurance/quote/cat\": dial tcp: lookup www.pet.insurance: no such host"
+  },
+  {
+    "Name": "Couverture d'assurance pour chiens (animaux)",
+    "URL": "https://www.pet.insurance/coverage/dogs",
+    "Owner": "owner465@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.insurance/coverage/dogs\": dial tcp: lookup www.pet.insurance: no such host"
+  },
+  {
+    "Name": "Cours de langue (allemand intermédiaire)",
+    "URL": "https://www.language.course/german/intermediate",
+    "Owner": "owner425@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.course/german/intermediate\": dial tcp: lookup www.language.course: no such host"
+  },
+  {
+    "Name": "Cours de langue (espagnol débutant)",
+    "URL": "https://www.language.course/spanish/beginner",
+    "Owner": "owner271@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.course/spanish/beginner\": dial tcp: lookup www.language.course: no such host"
+  },
+  {
+    "Name": "Idées de salon (rénovation de maison)",
+    "URL": "https://www.home.remodel/living-room/ideas",
+    "Owner": "owner475@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.remodel/living-room/ideas\": dial tcp: lookup www.home.remodel: no such host"
+  },
+  {
+    "Name": "Idées de salle de bain (rénovation de maison)",
+    "URL": "https://www.home.remodel/bathroom/ideas",
+    "Owner": "owner321@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.remodel/bathroom/ideas\": dial tcp: lookup www.home.remodel: no such host"
+  },
+  {
+    "Name": "Livres sur la concurrence sur Amazon",
+    "URL": "https://www.amazon.fr/livres/concurrence",
+    "Owner": "owner10@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Composants PC (matériel de jeu)",
+    "URL": "https://www.gaming.hardware/pc/components",
+    "Owner": "owner296@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.hardware/pc/components\": dial tcp: lookup www.gaming.hardware: no such host"
+  },
+  {
+    "Name": "Accessoires de console de jeu (matériel de jeu)",
+    "URL": "https://www.gaming.hardware/console/accessories",
+    "Owner": "owner450@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.hardware/console/accessories\": dial tcp: lookup www.gaming.hardware: no such host"
+  },
+  {
+    "Name": "Accessoires d'appareil photo (magasin de photographie)",
+    "URL": "https://www.photography.shop/camera/accessories",
+    "Owner": "owner199@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.shop/camera/accessories\": dial tcp: lookup www.photography.shop: no such host"
+  },
+  {
+    "Name": "Accessoires de trépied (magasin de photographie)",
+    "URL": "https://www.photography.shop/accessories/tripod",
+    "Owner": "owner353@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.shop/accessories/tripod\": dial tcp: lookup www.photography.shop: no such host"
+  },
+  {
+    "Name": "Magasin de mode (chaussures, baskets)",
+    "URL": "https://www.fashion.shop/shoes/sneakers",
+    "Owner": "owner390@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.shop/shoes/sneakers\": remote error: tls: unrecognized name"
+  },
+  {
+    "Name": "Leçon de théorie musicale (gammes)",
+    "URL": "https://www.music.theory/lesson/scales",
+    "Owner": "owner439@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.theory/lesson/scales\": dial tcp: lookup www.music.theory: no such host"
+  },
+  {
+    "Name": "Leçon de théorie musicale (accords)",
+    "URL": "https://www.music.theory/lesson/chords",
+    "Owner": "owner285@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.theory/lesson/chords\": dial tcp: lookup www.music.theory: no such host"
+  },
+  {
+    "Name": "Contactez-nous (support technique)",
+    "URL": "https://www.tech.support/contact/us",
+    "Owner": "owner413@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.support/contact/us\": dial tcp: lookup www.tech.support: no such host"
+  },
+  {
+    "Name": "FAQ de support technique (dépannage)",
+    "URL": "https://www.tech.support/faq/troubleshooting",
+    "Owner": "owner259@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.support/faq/troubleshooting\": dial tcp: lookup www.tech.support: no such host"
+  },
+  {
+    "Name": "Gagnants de prix de festival de film",
+    "URL": "https://www.movie.festival/awards/winners",
+    "Owner": "owner317@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.festival/awards/winners\": dial tcp: lookup www.movie.festival: no such host"
+  },
+  {
+    "Name": "Programme de festival de film (films)",
+    "URL": "https://www.movie.festival/schedule/films",
+    "Owner": "owner471@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.festival/schedule/films\": dial tcp: lookup www.movie.festival: no such host"
+  },
+  {
+    "Name": "Réservation de location de voiture",
+    "URL": "https://www.car.rental/booking/xyz",
+    "Owner": "owner146@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.rental/booking/xyz\": dial tcp: lookup www.car.rental: no such host"
+  },
+  {
+    "Name": "Compagnie de location de voitures (luxe)",
+    "URL": "https://www.car.rental/company/luxury",
+    "Owner": "owner276@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.rental/company/luxury\": dial tcp: lookup www.car.rental: no such host"
+  },
+  {
+    "Name": "Compagnie de location de voitures (économie)",
+    "URL": "https://www.car.rental/company/economy",
+    "Owner": "owner430@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.rental/company/economy\": dial tcp: lookup www.car.rental: no such host"
+  },
+  {
+    "Name": "Magasin de mode (robes)",
+    "URL": "https://www.fashion.shop/clothing/dresses",
+    "Owner": "owner236@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.shop/clothing/dresses\": remote error: tls: unrecognized name"
+  },
+  {
+    "Name": "Recettes saines (nutrition santé)",
+    "URL": "https://www.health.nutrition/recipes/healthy",
+    "Owner": "owner473@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.health.nutrition/recipes/healthy\": dial tcp: lookup www.health.nutrition: no such host"
+  },
+  {
+    "Name": "Régime végétalien (nutrition santé)",
+    "URL": "https://www.health.nutrition/diet/vegan",
+    "Owner": "owner319@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.health.nutrition/diet/vegan\": dial tcp: lookup www.health.nutrition: no such host"
+  },
+  {
+    "Name": "Traduction de dictionnaire linguistique (français)",
+    "URL": "https://www.language.dictionary/translation/french",
+    "Owner": "owner381@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.dictionary/translation/french\": dial tcp: lookup www.language.dictionary: no such host"
+  },
+  {
+    "Name": "Dictionnaire linguistique (mot 'hello')",
+    "URL": "https://www.language.dictionary/word/hello",
+    "Owner": "owner227@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.dictionary/word/hello\": dial tcp: lookup www.language.dictionary: no such host"
+  },
+  {
+    "Name": "Plantes de jardin (fleurs)",
+    "URL": "https://www.home.garden/plants/flowers",
+    "Owner": "owner255@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.garden/plants/flowers\": dial tcp 198.50.252.65:443: connect: connection refused"
+  },
+  {
+    "Name": "Tondeuse à gazon (outils de jardin)",
+    "URL": "https://www.home.garden/tools/lawnmower",
+    "Owner": "owner409@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.garden/tools/lawnmower\": dial tcp 198.50.252.65:443: connect: connection refused"
+  },
+  {
+    "Name": "Résumé de livre (fiction, classique)",
+    "URL": "https://www.book.summary/fiction/classic",
+    "Owner": "owner382@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.summary/fiction/classic\": dial tcp: lookup www.book.summary: no such host"
+  },
+  {
+    "Name": "Résumé de livre (biographie non-fiction)",
+    "URL": "https://www.book.summary/non-fiction/biography",
+    "Owner": "owner228@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.summary/non-fiction/biography\": dial tcp: lookup www.book.summary: no such host"
+  },
+  {
+    "Name": "Panier d'achat e-commerce",
+    "URL": "https://www.e-commerce.site/cart",
+    "Owner": "owner137@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.e-commerce.site/cart\": dial tcp: lookup www.e-commerce.site: no such host"
+  },
+  {
+    "Name": "Contenu Google User (3)",
+    "URL": "https://www.youtube.com/watch?v=0kL12_D040Y",
+    "Owner": "owner89@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Journal scientifique (bibliothèque en ligne)",
+    "URL": "https://www.online.library/journal/science",
+    "Owner": "owner371@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.library/journal/science\": dial tcp: lookup www.online.library: no such host"
+  },
+  {
+    "Name": "Livre numérique d'histoire (bibliothèque en ligne)",
+    "URL": "https://www.online.library/ebook/history",
+    "Owner": "owner217@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.library/ebook/history\": dial tcp: lookup www.online.library: no such host"
+  },
+  {
+    "Name": "Série de livres (auteur de thriller)",
+    "URL": "https://www.book.series/author/thriller",
+    "Owner": "owner426@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.series/author/thriller\": dial tcp: lookup www.book.series: no such host"
+  },
+  {
+    "Name": "Série de livres (auteur fantastique)",
+    "URL": "https://www.book.series/author/fantasy",
+    "Owner": "owner272@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.series/author/fantasy\": dial tcp: lookup www.book.series: no such host"
+  },
+  {
+    "Name": "IP invalide (exemple)",
+    "URL": "http://invalid-ip.123.456.789/test",
+    "Owner": "owner138@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"http://invalid-ip.123.456.789/test\": dial tcp: lookup invalid-ip.123.456.789: no such host"
+  },
+  {
+    "Name": "Leçon de cours éducatif",
+    "URL": "https://www.edu.site/course/lesson-1",
+    "Owner": "owner121@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.edu.site/course/lesson-1\": dial tcp: lookup www.edu.site: no such host"
+  },
+  {
+    "Name": "Détails du service de lavage de voiture",
+    "URL": "https://www.car.wash/service/details",
+    "Owner": "owner320@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.wash/service/details\": dial tcp: lookup www.car.wash: no such host"
+  },
+  {
+    "Name": "Localisations de lavage de voiture (ville)",
+    "URL": "https://www.car.wash/locations/city",
+    "Owner": "owner474@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.car.wash/locations/city\": dial tcp: lookup www.car.wash: no such host"
+  },
+  {
+    "Name": "Playlist de musique rock",
+    "URL": "https://www.music.stream/playlist/rock",
+    "Owner": "owner132@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.stream/playlist/rock\": dial tcp: lookup www.music.stream: no such host"
+  },
+  {
+    "Name": "Meilleure tablette (critique technologique)",
+    "URL": "https://www.tech.review/tablet/best",
+    "Owner": "owner457@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.review/tablet/best\": http: server gave HTTP response to HTTPS client"
+  },
+  {
+    "Name": "Critique de gadget technologique",
+    "URL": "https://www.tech.review/gadget/latest",
+    "Owner": "owner149@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.review/gadget/latest\": http: server gave HTTP response to HTTPS client"
+  },
+  {
+    "Name": "Contenu Google User (1)",
+    "URL": "https://www.youtube.com/watch?v=E-1I-ZtYQfQ",
+    "Owner": "owner63@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Meilleur ordinateur portable (critique technologique)",
+    "URL": "https://www.tech.review/laptop/best",
+    "Owner": "owner303@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.review/laptop/best\": http: server gave HTTP response to HTTPS client"
+  },
+  {
+    "Name": "Documentaire historique (Rome antique)",
+    "URL": "https://www.history.channel/documentary/ancient-rome",
+    "Owner": "owner380@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.channel/documentary/ancient-rome\": dial tcp: lookup www.history.channel: no such host"
+  },
+  {
+    "Name": "Série sur les anciens aliens (chaîne historique)",
+    "URL": "https://www.history.channel/series/ancient-aliens",
+    "Owner": "owner226@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.channel/series/ancient-aliens\": dial tcp: lookup www.history.channel: no such host"
+  },
+  {
+    "Name": "Offres d'emploi développeur",
+    "URL": "https://www.job.board/listings/developer",
+    "Owner": "owner141@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.job.board/listings/developer\": dial tcp: lookup www.job.board: no such host"
+  },
+  {
+    "Name": "Contenu Google User (2)",
+    "URL": "https://www.youtube.com/watch?v=c1B0bWn_d0E",
+    "Owner": "owner64@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (2)",
+    "URL": "https://www.youtube.com/watch?v=c1B0bWn_d0E",
+    "Owner": "owner98@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (0)",
+    "URL": "https://www.youtube.com/watch?v=Bs6Wc2q_i-8",
+    "Owner": "owner76@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Billets pour festival de musique 2024",
+    "URL": "https://www.music.festival/tickets/2024",
+    "Owner": "owner153@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.festival/tickets/2024\": dial tcp: lookup www.music.festival: no such host"
+  },
+  {
+    "Name": "Histoire du genre musical (rock)",
+    "URL": "https://www.music.genre/rock/history",
+    "Owner": "owner307@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.genre/rock/history\": dial tcp: lookup www.music.genre: no such host"
+  },
+  {
+    "Name": "Histoire du genre musical (jazz)",
+    "URL": "https://www.music.genre/jazz/history",
+    "Owner": "owner461@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.genre/jazz/history\": dial tcp: lookup www.music.genre: no such host"
+  },
+  {
+    "Name": "Nouvelles sorties (plateforme de streaming musical)",
+    "URL": "https://www.music.streaming/platform/new-releases",
+    "Owner": "owner329@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.streaming/platform/new-releases\": dial tcp: lookup www.music.streaming: no such host"
+  },
+  {
+    "Name": "Classements mondiaux (streaming musical)",
+    "URL": "https://www.music.streaming/charts/global",
+    "Owner": "owner483@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.streaming/charts/global\": dial tcp: lookup www.music.streaming: no such host"
+  },
+  {
+    "Name": "Contenu Google User (6)",
+    "URL": "https://www.youtube.com/watch?v=l_g2s4a2_y4",
+    "Owner": "owner97@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Expérience de tourisme spatial (apesanteur)",
+    "URL": "https://www.space.tourism/experience/zero-gravity",
+    "Owner": "owner433@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.tourism/experience/zero-gravity\": dial tcp: lookup www.space.tourism: no such host"
+  },
+  {
+    "Name": "Réservation de compagnie de tourisme spatial",
+    "URL": "https://www.space.tourism/company/booking",
+    "Owner": "owner279@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.tourism/company/booking\": dial tcp: lookup www.space.tourism: no such host"
+  },
+  {
+    "Name": "Contenu Google User (3)",
+    "URL": "https://www.youtube.com/watch?v=0kL12_D040Y",
+    "Owner": "owner65@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (7)",
+    "URL": "https://www.youtube.com/watch?v=K1QJ-0I-t1I",
+    "Owner": "owner81@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (8)",
+    "URL": "https://www.youtube.com/watch?v=r_M52Kj1q4M",
+    "Owner": "owner70@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Threads Python sur W3Schools",
+    "URL": "https://www.w3schools.com/python/python_threads.asp",
+    "Owner": "owner54@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (7)",
+    "URL": "https://www.youtube.com/watch?v=K1QJ-0I-t1I",
+    "Owner": "owner93@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (7)",
+    "URL": "https://www.youtube.com/watch?v=K1QJ-0I-t1I",
+    "Owner": "owner69@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (2)",
+    "URL": "https://www.youtube.com/watch?v=c1B0bWn_d0E",
+    "Owner": "owner74@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (1)",
+    "URL": "https://www.youtube.com/watch?v=E-1I-ZtYQfQ",
+    "Owner": "owner75@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Calculateur d'investissement (outil financier)",
+    "URL": "https://www.finance.tool/investment/calculator",
+    "Owner": "owner357@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.tool/investment/calculator\": dial tcp: lookup www.finance.tool: no such host"
+  },
+  {
+    "Name": "Outil financier (suivi budgétaire)",
+    "URL": "https://www.finance.tool/budget/tracker",
+    "Owner": "owner203@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.tool/budget/tracker\": dial tcp: lookup www.finance.tool: no such host"
+  },
+  {
+    "Name": "Énergie renouvelable (solution environnementale)",
+    "URL": "https://www.environmental.solution/renewable/energy",
+    "Owner": "owner322@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.solution/renewable/energy\": dial tcp: lookup www.environmental.solution: no such host"
+  },
+  {
+    "Name": "Gestion des déchets (solution environnementale)",
+    "URL": "https://www.environmental.solution/waste/management",
+    "Owner": "owner476@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.solution/waste/management\": dial tcp: lookup www.environmental.solution: no such host"
+  },
+  {
+    "Name": "Station spatiale (ISS en direct)",
+    "URL": "https://www.space.station/iss/live",
+    "Owner": "owner323@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.station/iss/live\": dial tcp: lookup www.space.station: no such host"
+  },
+  {
+    "Name": "Expériences de recherche en station spatiale",
+    "URL": "https://www.space.station/research/experiments",
+    "Owner": "owner477@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.space.station/research/experiments\": dial tcp: lookup www.space.station: no such host"
+  },
+  {
+    "Name": "Contenu Google User (8)",
+    "URL": "https://www.youtube.com/watch?v=r_M52Kj1q4M",
+    "Owner": "owner82@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (0)",
+    "URL": "https://www.youtube.com/watch?v=Bs6Wc2q_i-8",
+    "Owner": "owner88@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (9)",
+    "URL": "https://www.youtube.com/watch?v=0_20jZ-62pY",
+    "Owner": "owner71@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Étapes du processus d'adoption d'animaux",
+    "URL": "https://www.pet.adoption/process/steps",
+    "Owner": "owner443@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.adoption/process/steps\": dial tcp: lookup www.pet.adoption: no such host"
+  },
+  {
+    "Name": "Centre d'adoption d'animaux (chiens)",
+    "URL": "https://www.pet.adoption/center/dogs",
+    "Owner": "owner289@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.adoption/center/dogs\": dial tcp: lookup www.pet.adoption: no such host"
+  },
+  {
+    "Name": "Contenu Google User (4)",
+    "URL": "https://www.youtube.com/watch?v=2AEj2iG9WfQ",
+    "Owner": "owner90@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (5)",
+    "URL": "https://www.youtube.com/watch?v=H74I0s2d4X8",
+    "Owner": "owner79@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (0)",
+    "URL": "https://www.youtube.com/watch?v=Bs6Wc2q_i-8",
+    "Owner": "owner100@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (9)",
+    "URL": "https://www.youtube.com/watch?v=0_20jZ-62pY",
+    "Owner": "owner83@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (6)",
+    "URL": "https://www.youtube.com/watch?v=l_g2s4a2_y4",
+    "Owner": "owner80@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (10)",
+    "URL": "https://www.youtube.com/watch?v=2tXh30R-w_U",
+    "Owner": "owner84@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (6)",
+    "URL": "https://www.youtube.com/watch?v=l_g2s4a2_y4",
+    "Owner": "owner85@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (5)",
+    "URL": "https://www.youtube.com/watch?v=H74I0s2d4X8",
+    "Owner": "owner91@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (5)",
+    "URL": "https://www.youtube.com/watch?v=H74I0s2d4X8",
+    "Owner": "owner67@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (8)",
+    "URL": "https://www.youtube.com/watch?v=r_M52Kj1q4M",
+    "Owner": "owner94@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Cours Udemy sur le multithreading Java",
+    "URL": "https://www.udemy.com/course/java-concurrency-multithreading/",
+    "Owner": "owner37@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Question d'électricité (forum DIY)",
+    "URL": "https://www.diy.forum/question/electrical",
+    "Owner": "owner200@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.forum/question/electrical\": dial tcp: lookup www.diy.forum: no such host"
+  },
+  {
+    "Name": "Contenu Google User (4)",
+    "URL": "https://www.youtube.com/watch?v=2AEj2iG9WfQ",
+    "Owner": "owner66@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (0)",
+    "URL": "https://www.youtube.com/watch?v=Bs6Wc2q_i-8",
+    "Owner": "owner62@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (9)",
+    "URL": "https://www.youtube.com/watch?v=0_20jZ-62pY",
+    "Owner": "owner95@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (2)",
+    "URL": "https://www.youtube.com/watch?v=c1B0bWn_d0E",
+    "Owner": "owner86@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (10)",
+    "URL": "https://www.youtube.com/watch?v=2tXh30R-w_U",
+    "Owner": "owner96@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Profil d'artiste (service musical)",
+    "URL": "https://www.music.service/artist/profile",
+    "Owner": "owner351@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.service/artist/profile\": dial tcp: lookup www.music.service: no such host"
+  },
+  {
+    "Name": "Service musical (genre pop)",
+    "URL": "https://www.music.service/genre/pop",
+    "Owner": "owner197@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.service/genre/pop\": dial tcp: lookup www.music.service: no such host"
+  },
+  {
+    "Name": "Concurrence Python sur DataCamp",
+    "URL": "https://www.datacamp.com/community/tutorials/python-concurrency",
+    "Owner": "owner58@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (10)",
+    "URL": "https://www.youtube.com/watch?v=2tXh30R-w_U",
+    "Owner": "owner72@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (1)",
+    "URL": "https://www.youtube.com/watch?v=E-1I-ZtYQfQ",
+    "Owner": "owner99@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (6)",
+    "URL": "https://www.youtube.com/watch?v=l_g2s4a2_y4",
+    "Owner": "owner68@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (1)",
+    "URL": "https://www.youtube.com/watch?v=E-1I-ZtYQfQ",
+    "Owner": "owner87@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (6)",
+    "URL": "https://www.youtube.com/watch?v=l_g2s4a2_y4",
+    "Owner": "owner73@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Tutoriel Concurrence Java Baeldung",
+    "URL": "https://www.baeldung.com/java-concurrency-tutorial",
+    "Owner": "owner28@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Rapport de politique environnementale (climat)",
+    "URL": "https://www.environmental.policy/report/climate",
+    "Owner": "owner278@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.policy/report/climate\": dial tcp: lookup www.environmental.policy: no such host"
+  },
+  {
+    "Name": "Réglementation de la qualité de l'air (politique environnementale)",
+    "URL": "https://www.environmental.policy/regulation/air-quality",
+    "Owner": "owner432@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.policy/regulation/air-quality\": dial tcp: lookup www.environmental.policy: no such host"
+  },
+  {
+    "Name": "Contenu Google User (3)",
+    "URL": "https://www.youtube.com/watch?v=0kL12_D040Y",
+    "Owner": "owner77@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Réfrigérateur de cuisine (appareils électroménagers)",
+    "URL": "https://www.home.appliances/kitchen/refrigerator",
+    "Owner": "owner277@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.appliances/kitchen/refrigerator\": dial tcp: lookup www.home.appliances: no such host"
+  },
+  {
+    "Name": "Lave-linge (appareils électroménagers)",
+    "URL": "https://www.home.appliances/laundry/washer",
+    "Owner": "owner431@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.home.appliances/laundry/washer\": dial tcp: lookup www.home.appliances: no such host"
+  },
+  {
+    "Name": "Contenu Google User (4)",
+    "URL": "https://www.youtube.com/watch?v=2AEj2iG9WfQ",
+    "Owner": "owner78@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Contenu Google User (6)",
+    "URL": "https://www.youtube.com/watch?v=l_g2s4a2_y4",
+    "Owner": "owner92@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Critique d'outil DIY (perceuse)",
+    "URL": "https://www.diy.tools/review/drill",
+    "Owner": "owner178@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.tools/review/drill\": dial tcp: lookup www.diy.tools: no such host"
+  },
+  {
+    "Name": "Directives de sécurité alimentaire (stockage)",
+    "URL": "https://www.food.safety/guidelines/storage",
+    "Owner": "owner282@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.food.safety/guidelines/storage\": dial tcp: lookup www.food.safety: no such host"
+  },
+  {
+    "Name": "Certification de restaurant (sécurité alimentaire)",
+    "URL": "https://www.food.safety/certification/restaurant",
+    "Owner": "owner436@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.food.safety/certification/restaurant\": dial tcp: lookup www.food.safety: no such host"
+  },
+  {
+    "Name": "Cours de dressage d'animaux en ligne",
+    "URL": "https://www.pet.training/online/course",
+    "Owner": "owner377@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Cours de dressage de chiots (animaux)",
+    "URL": "https://www.pet.training/class/puppy",
+    "Owner": "owner223@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Bonnes pratiques de concurrence Go sur Toptal",
+    "URL": "https://www.toptal.com/go/go-concurrency-best-practices",
+    "Owner": "owner45@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Documentaire historique (ère moderne)",
+    "URL": "https://www.history.documentary/modern/era",
+    "Owner": "owner358@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.documentary/modern/era\": dial tcp: lookup www.history.documentary: no such host"
+  },
+  {
+    "Name": "Documentaire historique (Égypte ancienne)",
+    "URL": "https://www.history.documentary/ancient/egypt",
+    "Owner": "owner204@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.documentary/ancient/egypt\": dial tcp: lookup www.history.documentary: no such host"
+  },
+  {
+    "Name": "Conseils de voyage (voyage à petit budget)",
+    "URL": "https://www.travel.tips/budget/travel",
+    "Owner": "owner416@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Conseils de voyage (guide d'emballage)",
+    "URL": "https://www.travel.tips/packing/guide",
+    "Owner": "owner262@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Glossaire financier (terme 'équité')",
+    "URL": "https://www.finance.glossary/term/equity",
+    "Owner": "owner423@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.glossary/term/equity\": dial tcp: lookup www.finance.glossary: no such host"
+  },
+  {
+    "Name": "Glossaire financier (terme 'inflation')",
+    "URL": "https://www.finance.glossary/term/inflation",
+    "Owner": "owner269@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.glossary/term/inflation\": dial tcp: lookup www.finance.glossary: no such host"
+  },
+  {
+    "Name": "Adoption de chien (sauvetage d'animaux)",
+    "URL": "https://www.pet.rescue/adopt/dog",
+    "Owner": "owner201@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.rescue/adopt/dog\": dial tcp: lookup www.pet.rescue: no such host"
+  },
+  {
+    "Name": "Refuge pour animaux (chats)",
+    "URL": "https://www.pet.rescue/shelter/cats",
+    "Owner": "owner355@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.rescue/shelter/cats\": dial tcp: lookup www.pet.rescue: no such host"
+  },
+  {
+    "Name": "OpenAI",
+    "URL": "https://openai.com",
+    "Owner": "ai@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Nouvelle collection de marque de mode",
+    "URL": "https://www.fashion.brand/new-collection",
+    "Owner": "owner147@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fashion.brand/new-collection\": dial tcp: lookup www.fashion.brand: no such host"
+  },
+  {
+    "Name": "Activité de suivi de fitness (course)",
+    "URL": "https://www.fitness.tracker/activity/run",
+    "Owner": "owner143@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.fitness.tracker/activity/run\": dial tcp: lookup www.fitness.tracker: no such host"
+  },
+  {
+    "Name": "Semences de fleurs en magasin de jardinage",
+    "URL": "https://www.gardening.store/seeds/flower",
+    "Owner": "owner180@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gardening.store/seeds/flower\": dial tcp: lookup www.gardening.store: no such host"
+  },
+  {
+    "Name": "Critique de film (comédie)",
+    "URL": "https://www.movie.review/genre/comedy",
+    "Owner": "owner185@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.movie.review/genre/comedy\": dial tcp: lookup www.movie.review: no such host"
+  },
+  {
+    "Name": "Nourriture pour chien (animalerie)",
+    "URL": "https://www.pet.shop/food/dog",
+    "Owner": "owner487@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.shop/food/dog\": dial tcp: lookup www.pet.shop: no such host"
+  },
+  {
+    "Name": "Recette de cuisine (pâtes)",
+    "URL": "https://www.cooking.recipe/dish/pasta",
+    "Owner": "owner150@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.cooking.recipe/dish/pasta\": dial tcp: lookup www.cooking.recipe: no such host"
+  },
+  {
+    "Name": "Laisse pour animaux (animalerie)",
+    "URL": "https://www.pet.shop/accessories/leash",
+    "Owner": "owner333@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.shop/accessories/leash\": dial tcp: lookup www.pet.shop: no such host"
+  },
+  {
+    "Name": "Galerie de paysages de portfolio de photographie",
+    "URL": "https://www.photography.portfolio/gallery/landscapes",
+    "Owner": "owner155@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.portfolio/gallery/landscapes\": dial tcp: lookup www.photography.portfolio: no such host"
+  },
+  {
+    "Name": "Idée d'artisanat DIY (origami)",
+    "URL": "https://www.diy.crafts/idea/origami",
+    "Owner": "owner376@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.crafts/idea/origami\": dial tcp: lookup www.diy.crafts: no such host"
+  },
+  {
+    "Name": "Idée d'artisanat DIY (tricot)",
+    "URL": "https://www.diy.crafts/idea/knitting",
+    "Owner": "owner222@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.crafts/idea/knitting\": dial tcp: lookup www.diy.crafts: no such host"
+  },
+  {
+    "Name": "Produits de toilettage pour animaux (shampoing)",
+    "URL": "https://www.pet.grooming/products/shampoo",
+    "Owner": "owner399@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.grooming/products/shampoo\": dial tcp: lookup www.pet.grooming: no such host"
+  },
+  {
+    "Name": "Réservation de salon de toilettage pour animaux",
+    "URL": "https://www.pet.grooming/salon/booking",
+    "Owner": "owner245@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.grooming/salon/booking\": dial tcp: lookup www.pet.grooming: no such host"
+  },
+  {
+    "Name": "Critique de jeu (RPG)",
+    "URL": "https://www.gaming.review/game/rpg",
+    "Owner": "owner406@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.review/game/rpg\": dial tcp: lookup www.gaming.review: no such host"
+  },
+  {
+    "Name": "Critique de console de jeu (PS5)",
+    "URL": "https://www.gaming.review/console/ps5",
+    "Owner": "owner252@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.review/console/ps5\": dial tcp: lookup www.gaming.review: no such host"
+  },
+  {
+    "Name": "Action climatique (actualités environnementales)",
+    "URL": "https://www.environmental.news/climate/action",
+    "Owner": "owner498@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.news/climate/action\": dial tcp: lookup www.environmental.news: no such host"
+  },
+  {
+    "Name": "Conservation de la faune (actualités environnementales)",
+    "URL": "https://www.environmental.news/wildlife/conservation",
+    "Owner": "owner344@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.news/wildlife/conservation\": dial tcp: lookup www.environmental.news: no such host"
+  },
+  {
+    "Name": "Rapport sur le climat (actualités environnementales)",
+    "URL": "https://www.environmental.news/climate/report",
+    "Owner": "owner190@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.environmental.news/climate/report\": dial tcp: lookup www.environmental.news: no such host"
+  },
+  {
+    "Name": "Application d'apprentissage des langues (grammaire)",
+    "URL": "https://www.language.learning/app/grammar",
+    "Owner": "owner293@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.learning/app/grammar\": dial tcp: lookup www.language.learning: no such host"
+  },
+  {
+    "Name": "Vocabulaire d'apprentissage des langues (français)",
+    "URL": "https://www.language.learning/vocabulary/french",
+    "Owner": "owner337@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.learning/vocabulary/french\": dial tcp: lookup www.language.learning: no such host"
+  },
+  {
+    "Name": "Vocabulaire d'apprentissage des langues (espagnol)",
+    "URL": "https://www.language.learning/vocabulary/spanish",
+    "Owner": "owner491@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.learning/vocabulary/spanish\": dial tcp: lookup www.language.learning: no such host"
+  },
+  {
+    "Name": "Application d'apprentissage des langues (prononciation)",
+    "URL": "https://www.language.learning/app/pronunciation",
+    "Owner": "owner447@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.learning/app/pronunciation\": dial tcp: lookup www.language.learning: no such host"
+  },
+  {
+    "Name": "Leçon d'apprentissage des langues (français)",
+    "URL": "https://www.language.learning/lesson/french",
+    "Owner": "owner161@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.learning/lesson/french\": dial tcp: lookup www.language.learning: no such host"
+  },
+  {
+    "Name": "Recherche sur l'AI (innovation technologique)",
+    "URL": "https://www.tech.innovation/research/ai",
+    "Owner": "owner435@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.innovation/research/ai\": dial tcp: lookup www.tech.innovation: no such host"
+  },
+  {
+    "Name": "Financement de startup (innovation technologique)",
+    "URL": "https://www.tech.innovation/startup/funding",
+    "Owner": "owner281@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.innovation/startup/funding\": dial tcp: lookup www.tech.innovation: no such host"
+  },
+  {
+    "Name": "Page Microsoft sur la concurrence",
+    "URL": "https://www.microsoft.com/fr-fr/windows/concurrency",
+    "Owner": "owner15@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Filtres d'appareil photo (équipement photographique)",
+    "URL": "https://www.photography.gear/accessories/filters",
+    "Owner": "owner419@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.gear/accessories/filters\": dial tcp: lookup www.photography.gear: no such host"
+  },
+  {
+    "Name": "Objectifs d'appareil photo (équipement photographique)",
+    "URL": "https://www.photography.gear/camera/lenses",
+    "Owner": "owner265@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.gear/camera/lenses\": dial tcp: lookup www.photography.gear: no such host"
+  },
+  {
+    "Name": "Kit Arduino (électronique DIY)",
+    "URL": "https://www.diy.electronics/kit/arduino",
+    "Owner": "owner442@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.electronics/kit/arduino\": dial tcp: lookup www.diy.electronics: no such host"
+  },
+  {
+    "Name": "Projet d'électronique DIY (robot)",
+    "URL": "https://www.diy.electronics/project/robot",
+    "Owner": "owner288@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.electronics/project/robot\": dial tcp: lookup www.diy.electronics: no such host"
+  },
+  {
+    "Name": "Artefact de musée d'histoire (romain)",
+    "URL": "https://www.history.museum/artifact/roman",
+    "Owner": "owner424@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.museum/artifact/roman\": dial tcp: lookup www.history.museum: no such host"
+  },
+  {
+    "Name": "Exposition de musée d'histoire (Grèce antique)",
+    "URL": "https://www.history.museum/exhibit/ancient-greece",
+    "Owner": "owner336@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.museum/exhibit/ancient-greece\": dial tcp: lookup www.history.museum: no such host"
+  },
+  {
+    "Name": "Exposition de musée d'histoire (Rome antique)",
+    "URL": "https://www.history.museum/exhibit/ancient-rome",
+    "Owner": "owner160@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.museum/exhibit/ancient-rome\": dial tcp: lookup www.history.museum: no such host"
+  },
+  {
+    "Name": "Artefact de musée d'histoire (ancien)",
+    "URL": "https://www.history.museum/artifact/ancient",
+    "Owner": "owner270@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.museum/artifact/ancient\": dial tcp: lookup www.history.museum: no such host"
+  },
+  {
+    "Name": "Exposition de musée d'histoire (égyptien)",
+    "URL": "https://www.history.museum/exhibit/egyptian",
+    "Owner": "owner490@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.history.museum/exhibit/egyptian\": dial tcp: lookup www.history.museum: no such host"
+  },
+  {
+    "Name": "Programme de foire du livre",
+    "URL": "https://www.book.fair/event/schedule",
+    "Owner": "owner316@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.fair/event/schedule\": dial tcp: lookup www.book.fair: no such host"
+  },
+  {
+    "Name": "Genre de foire du livre (enfants)",
+    "URL": "https://www.book.fair/genre/childrens",
+    "Owner": "owner470@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.fair/genre/childrens\": dial tcp: lookup www.book.fair: no such host"
+  },
+  {
+    "Name": "Innovations d'expo événement technologique",
+    "URL": "https://www.tech.event/expo/innovations",
+    "Owner": "owner479@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.event/expo/innovations\": dial tcp: lookup www.tech.event: no such host"
+  },
+  {
+    "Name": "Conférenciers d'événement technologique",
+    "URL": "https://www.tech.event/conference/speakers",
+    "Owner": "owner325@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.tech.event/conference/speakers\": dial tcp: lookup www.tech.event: no such host"
+  },
+  {
+    "Name": "Livre Rust sur la concurrence",
+    "URL": "https://doc.rust-lang.org/book/ch16-00-concurrency.html",
+    "Owner": "owner47@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Réservation de studio de photographie (portrait)",
+    "URL": "https://www.photography.studio/portrait/booking",
+    "Owner": "owner287@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.studio/portrait/booking\": dial tcp: lookup www.photography.studio: no such host"
+  },
+  {
+    "Name": "Séances photo commerciales (studio de photographie)",
+    "URL": "https://www.photography.studio/commercial/shoots",
+    "Owner": "owner441@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.studio/commercial/shoots\": dial tcp: lookup www.photography.studio: no such host"
+  },
+  {
+    "Name": "Mon site perso",
+    "URL": "https://axellelanca.com",
+    "Owner": "axl@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Transactions d'application financière",
+    "URL": "https://www.finance.app/transactions",
+    "Owner": "owner125@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Guide financier (investissement pour débutants)",
+    "URL": "https://www.finance.guide/investing/beginner",
+    "Owner": "owner467@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.guide/investing/beginner\": dial tcp: lookup www.finance.guide: no such host"
+  },
+  {
+    "Name": "Guide financier personnel (budgétisation)",
+    "URL": "https://www.finance.guide/personal/budgeting",
+    "Owner": "owner313@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.guide/personal/budgeting\": dial tcp: lookup www.finance.guide: no such host"
+  },
+  {
+    "Name": "Actualités financières (économie mondiale)",
+    "URL": "https://www.finance.news/economy/global",
+    "Owner": "owner225@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.news/economy/global\": dial tcp: lookup www.finance.news: no such host"
+  },
+  {
+    "Name": "Analyse boursière (finance)",
+    "URL": "https://www.finance.news/stock/analysis",
+    "Owner": "owner159@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.news/stock/analysis\": dial tcp: lookup www.finance.news: no such host"
+  },
+  {
+    "Name": "Analyse du marché (actualités financières)",
+    "URL": "https://www.finance.news/market/analysis",
+    "Owner": "owner445@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.news/market/analysis\": dial tcp: lookup www.finance.news: no such host"
+  },
+  {
+    "Name": "Actualités financières (économie locale)",
+    "URL": "https://www.finance.news/economy/local",
+    "Owner": "owner379@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.news/economy/local\": dial tcp: lookup www.finance.news: no such host"
+  },
+  {
+    "Name": "Marché boursier (actualités financières)",
+    "URL": "https://www.finance.news/stock/market",
+    "Owner": "owner335@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.news/stock/market\": dial tcp: lookup www.finance.news: no such host"
+  },
+  {
+    "Name": "Indices boursiers (actualités financières)",
+    "URL": "https://www.finance.news/stock/indices",
+    "Owner": "owner489@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.news/stock/indices\": dial tcp: lookup www.finance.news: no such host"
+  },
+  {
+    "Name": "Mise à jour du marché (actualités financières)",
+    "URL": "https://www.finance.news/market/update",
+    "Owner": "owner291@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.finance.news/market/update\": dial tcp: lookup www.finance.news: no such host"
+  },
+  {
+    "Name": "Inspiration de design d'intérieur (chambre)",
+    "URL": "https://www.home.design/inspiration/bedroom",
+    "Owner": "owner211@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Standards W3C sur la concurrence",
+    "URL": "https://www.w3.org/standards/webdesign/concurrency",
+    "Owner": "owner23@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Nouvelle loi gouvernementale",
+    "URL": "https://www.government.gov/policy/new-law",
+    "Owner": "owner129@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.government.gov/policy/new-law\": dial tcp: lookup www.government.gov: no such host"
+  },
+  {
+    "Name": "Exposition de galerie d'art (moderne)",
+    "URL": "https://www.art.gallery/exhibit/modern",
+    "Owner": "owner144@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Serveur Discord de communauté de jeu",
+    "URL": "https://www.gaming.community/discord/server",
+    "Owner": "owner230@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Cours OpenClassrooms sur la concurrence",
+    "URL": "https://www.openclassroom.com/courses/concurrence-et-parallelsime",
+    "Owner": "owner12@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.openclassroom.com/courses/concurrence-et-parallelsime\": dial tcp 217.70.184.50:443: connect: connection refused"
+  },
+  {
+    "Name": "Cours Pluralsight sur la concurrence Java",
+    "URL": "https://www.pluralsight.com/courses/java-concurrency",
+    "Owner": "owner38@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Forum de jeu (stratégie)",
+    "URL": "https://www.gaming.forum/topic/strategy",
+    "Owner": "owner186@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.forum/topic/strategy\": remote error: tls: handshake failure"
+  },
+  {
+    "Name": "Multithreading Python sur Tutorialspoint",
+    "URL": "https://www.tutorialspoint.com/python/python_multithreading.htm",
+    "Owner": "owner53@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Diplôme universitaire en ligne (informatique)",
+    "URL": "https://www.online.university/degree/computer-science",
+    "Owner": "owner195@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.university/degree/computer-science\": dial tcp 75.126.102.236:443: connect: connection refused"
+  },
+  {
+    "Name": "Concurrence JavaScript sur FreeCodeCamp",
+    "URL": "https://www.freecodecamp.org/news/concurrency-in-javascript/",
+    "Owner": "owner40@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Propriété immobilière",
+    "URL": "https://www.realestate.com/property/123",
+    "Owner": "owner142@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.realestate.com/property/123\": dial tcp: lookup www.realestate.com: no such host"
+  },
+  {
+    "Name": "Cours universitaire en ligne (science des données)",
+    "URL": "https://www.online.university/course/data-science",
+    "Owner": "owner349@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.university/course/data-science\": dial tcp 75.126.102.236:443: connect: connection refused"
+  },
+  {
+    "Name": "Tutoriel Multithreading JavaPoint",
+    "URL": "https://www.tutorialspoint.com/java/java_multithreading.htm",
+    "Owner": "owner30@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Forum de jeu (jeux de stratégie)",
+    "URL": "https://www.gaming.forum/topic/strategy-games",
+    "Owner": "owner494@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.forum/topic/strategy-games\": remote error: tls: handshake failure"
+  },
+  {
+    "Name": "Actualités basket-ball (NBA)",
+    "URL": "https://www.sports.news/basketball/nba",
+    "Owner": "owner330@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Coupe du monde de football (actualités sportives)",
+    "URL": "https://www.sports.news/soccer/world-cup",
+    "Owner": "owner352@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Recettes de dessert (gâteau)",
+    "URL": "https://www.food.recipes/dessert/cake",
+    "Owner": "owner304@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Documentation Promise JavaScript",
+    "URL": "https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "Owner": "owner3@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Recettes culinaires (cuisine méditerranéenne)",
+    "URL": "https://www.food.recipes/cuisine/mediterranean",
+    "Owner": "owner414@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Nouvel article de blog",
+    "URL": "https://www.blog.example.net/article/2023/10/new-post",
+    "Owner": "owner106@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.blog.example.net/article/2023/10/new-post\": dial tcp: lookup www.blog.example.net: no such host"
+  },
+  {
+    "Name": "Recettes culinaires (cuisine asiatique)",
+    "URL": "https://www.food.recipes/cuisine/asian",
+    "Owner": "owner260@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Résultats de football (actualités sportives)",
+    "URL": "https://www.sports.news/football/scores",
+    "Owner": "owner198@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Actualités tennis (Grand Chelem)",
+    "URL": "https://www.sports.news/tennis/grand-slam",
+    "Owner": "owner484@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Logiciel de design d'intérieur (3D)",
+    "URL": "https://www.home.design/software/3d",
+    "Owner": "owner365@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Recherche Google sur la concurrence",
+    "URL": "https://www.google.com/search?q=concurrence",
+    "Owner": "owner1@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Forum de communauté de jeu (PC Gaming)",
+    "URL": "https://www.gaming.community/forum/pc-gaming",
+    "Owner": "owner384@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Utiliser un pool de threads Python sur Kite",
+    "URL": "https://www.kite.com/python/examples/4283/use-a-thread-pool-to-run-functions-in-parallel",
+    "Owner": "owner59@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Devis d'assurance automobile en ligne",
+    "URL": "https://www.car.insurance/quote/online",
+    "Owner": "owner232@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Forum de jeu (esports)",
+    "URL": "https://www.gaming.forum/topic/esports",
+    "Owner": "owner340@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.forum/topic/esports\": remote error: tls: handshake failure"
+  },
+  {
+    "Name": "Processus de réclamation d'assurance automobile",
+    "URL": "https://www.car.insurance/claims/process",
+    "Owner": "owner386@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Comprendre la concurrence JavaScript sur Smashing Magazine",
+    "URL": "https://www.smashingmagazine.com/2018/01/understanding-concurrency-javascript/",
+    "Owner": "owner42@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Essais Python sur les graphes",
+    "URL": "https://www.python.org/doc/essays/graphs/",
+    "Owner": "owner49@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Discussion de forum communautaire en ligne",
+    "URL": "https://www.online.community/forum/discussion",
+    "Owner": "owner261@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.community/forum/discussion\": tls: failed to verify certificate: x509: certificate is valid for www.ssl.how, ssl.how, not www.online.community"
+  },
+  {
+    "Name": "Forum de support communautaire en ligne",
+    "URL": "https://www.online.community/support/forum",
+    "Owner": "owner415@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.community/support/forum\": tls: failed to verify certificate: x509: certificate is valid for www.ssl.how, ssl.how, not www.online.community"
+  },
+  {
+    "Name": "Application linguistique (exercices de grammaire)",
+    "URL": "https://www.language.app/grammar/exercises",
+    "Owner": "owner359@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de voyage (France)",
+    "URL": "https://www.travel.blog/destination/france",
+    "Owner": "owner152@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Concurrence en Java sur GeeksforGeeks",
+    "URL": "https://www.geeksforgeeks.org/concurrency-in-java/",
+    "Owner": "owner26@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de voyage (Amérique du Nord, Canada)",
+    "URL": "https://www.travel.blog/north-america/canada",
+    "Owner": "owner482@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de voyage (Asie, Japon)",
+    "URL": "https://www.travel.blog/asia/japan",
+    "Owner": "owner372@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Concurrence Python sur Programiz",
+    "URL": "https://www.programiz.com/python-programming/concurrency",
+    "Owner": "owner52@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de voyage (Europe, Italie)",
+    "URL": "https://www.travel.blog/europe/italy",
+    "Owner": "owner328@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Application linguistique (pratique orale)",
+    "URL": "https://www.language.app/practice/speaking",
+    "Owner": "owner205@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Cours d'éducation environnementale (durabilité)",
+    "URL": "https://www.environmental.education/course/sustainability",
+    "Owner": "owner454@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Équipement de jardinage (tondeuse)",
+    "URL": "https://www.gardening.tools/equipment/lawnmower",
+    "Owner": "owner224@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de communauté de jardinage (fleurs)",
+    "URL": "https://www.gardening.community/blog/flowers",
+    "Owner": "owner444@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Forum de communauté de jardinage (légumes)",
+    "URL": "https://www.gardening.community/forum/vegetables",
+    "Owner": "owner290@example.com",
+    "Status": "436 ",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Perceuse électrique (outils de jardinage)",
+    "URL": "https://www.gardening.tools/power/drill",
+    "Owner": "owner334@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Ordinateurs portables (boutique en ligne)",
+    "URL": "https://www.online.shop/electronics/laptops",
+    "Owner": "owner481@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Programme d'entraînement sportif (course)",
+    "URL": "https://www.sports.training/program/running",
+    "Owner": "owner418@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Conseils de technique photographique (éclairage)",
+    "URL": "https://www.photography.tips/technique/lighting",
+    "Owner": "owner177@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.photography.tips/technique/lighting\": remote error: tls: handshake failure"
+  },
+  {
+    "Name": "Vêtements pour hommes (boutique en ligne)",
+    "URL": "https://www.online.shop/clothing/men",
+    "Owner": "owner327@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Réparation de tuyau d'arrosage (outils de jardinage)",
+    "URL": "https://www.gardening.tools/garden-hose/repair",
+    "Owner": "owner488@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Sécateurs à main (outils de jardinage)",
+    "URL": "https://www.gardening.tools/hand/pruners",
+    "Owner": "owner378@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Programme d'éducation environnementale (jeunesse)",
+    "URL": "https://www.environmental.education/program/youth",
+    "Owner": "owner300@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Prévisions météo Paris",
+    "URL": "https://www.weather.app/forecast/paris",
+    "Owner": "owner139@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Guide Spring sur les méthodes asynchrones",
+    "URL": "https://www.spring.io/guides/gs/async-method/",
+    "Owner": "owner25@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Concurrence Python sur Python Tutorial",
+    "URL": "https://www.pythontutorial.net/python-concurrency/",
+    "Owner": "owner60@example.com",
+    "Status": "406 Not Acceptable",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Questions d'entretien Concurrence Java Educative.io",
+    "URL": "https://www.educative.io/courses/java-concurrency-interview-questions",
+    "Owner": "owner31@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Nouvelle sortie de jeu",
+    "URL": "https://www.gaming.news/release/new-game",
+    "Owner": "owner164@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog financier (investissement crypto)",
+    "URL": "https://www.finance.blog/investing/crypto",
+    "Owner": "owner401@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Projet d'organisation environnementale (eau propre)",
+    "URL": "https://www.environmental.org/project/clean-water",
+    "Owner": "owner168@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Nouvelles de dernière minute",
+    "URL": "https://www.news.channel/breaking-news",
+    "Owner": "owner148@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Cours edX sur la concurrence",
+    "URL": "https://www.edx.org/course/concurrency",
+    "Owner": "owner36@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Projet d'art DIY (peinture)",
+    "URL": "https://www.diy.art/project/painting",
+    "Owner": "owner310@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Tutoriel d'art DIY (dessin)",
+    "URL": "https://www.diy.art/tutorial/drawing",
+    "Owner": "owner464@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Téléchargement de logiciel",
+    "URL": "https://www.software.company/download/app.exe",
+    "Owner": "owner119@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Horaires de cinéma (billets de film)",
+    "URL": "https://www.movie.tickets/cinema/showtimes",
+    "Owner": "owner251@example.com",
+    "Status": "410 Gone",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Réservation de billets de film en ligne",
+    "URL": "https://www.movie.tickets/online/booking",
+    "Owner": "owner405@example.com",
+    "Status": "410 Gone",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Apprendre la concurrence Rust",
+    "URL": "https://www.rust-lang.org/learn/concurrency",
+    "Owner": "owner46@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Magasin d'équipement sportif (yoga)",
+    "URL": "https://www.sports.equipment/shop/yoga",
+    "Owner": "owner374@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Magasin d'équipement sportif (course)",
+    "URL": "https://www.sports.equipment/shop/running",
+    "Owner": "owner220@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Découverte d'une nouvelle planète (actualités spatiales)",
+    "URL": "https://www.space.news/discovery/new-planet",
+    "Owner": "owner257@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Mission Apollo (actualités spatiales)",
+    "URL": "https://www.space.news/mission/apollo",
+    "Owner": "owner411@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Application de livraison de nourriture (commande)",
+    "URL": "https://www.food.delivery/app/order",
+    "Owner": "owner238@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Restaurant de livraison de nourriture (pizza)",
+    "URL": "https://www.food.delivery/restaurant/pizza",
+    "Owner": "owner140@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Plateforme d'éducation en ligne (enseignement supérieur)",
+    "URL": "https://www.online.education/platform/higher-ed",
+    "Owner": "owner437@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.education/platform/higher-ed\": tls: failed to verify certificate: x509: An invalid certificate subject name was encountered."
+  },
+  {
+    "Name": "Restaurant de livraison de nourriture (sushi)",
+    "URL": "https://www.food.delivery/restaurant/sushi",
+    "Owner": "owner392@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Concurrence Python sur Real Python",
+    "URL": "https://realpython.com/python-concurrency/",
+    "Owner": "owner50@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Plateforme d'éducation en ligne (K12)",
+    "URL": "https://www.online.education/platform/k12",
+    "Owner": "owner283@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.online.education/platform/k12\": tls: failed to verify certificate: x509: An invalid certificate subject name was encountered."
+  },
+  {
+    "Name": "Technologies de concurrence Oracle Java",
+    "URL": "https://www.oracle.com/java/technologies/concurrency.html",
+    "Owner": "owner17@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Service de dentiste (clinique de santé)",
+    "URL": "https://www.health.clinic/service/dentist",
+    "Owner": "owner275@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Concurrence JavaScript avec Web Workers sur SitePoint",
+    "URL": "https://www.sitepoint.com/javascript-concurrency-web-workers/",
+    "Owner": "owner41@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de voyage (randonnée)",
+    "URL": "https://www.travel.blog/adventure/hiking",
+    "Owner": "owner218@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Partenaire d'échange linguistique",
+    "URL": "https://www.language.exchange/partner/find",
+    "Owner": "owner183@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Dernières actualités sur l'IA (blog technologique)",
+    "URL": "https://www.tech.blog/ai/latest",
+    "Owner": "owner193@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Conseils en cybersécurité (blog technologique)",
+    "URL": "https://www.tech.blog/cybersecurity/tips",
+    "Owner": "owner347@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Forfaits vacances (agence de voyage)",
+    "URL": "https://www.travel.agency/vacation/packages",
+    "Owner": "owner460@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Recherche de vols (agence de voyage)",
+    "URL": "https://www.travel.agency/flights/search",
+    "Owner": "owner196@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de mode (conseils de style)",
+    "URL": "https://www.fashion.blog/style/tips",
+    "Owner": "owner214@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Croisière méditerranéenne (agence de voyage)",
+    "URL": "https://www.travel.agency/cruise/mediterranean",
+    "Owner": "owner306@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de mode (tendances d'influenceurs)",
+    "URL": "https://www.fashion.blog/influencer/trends",
+    "Owner": "owner456@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Recherche d'hôtels (agence de voyage)",
+    "URL": "https://www.travel.agency/hotels/search",
+    "Owner": "owner350@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Python asynchrone avec Asyncio sur Twilio",
+    "URL": "https://www.twilio.com/blog/asynchronous-python-with-asyncio",
+    "Owner": "owner61@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog financier (investissement boursier)",
+    "URL": "https://www.finance.blog/investing/stocks",
+    "Owner": "owner247@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Publication d'institut de recherche",
+    "URL": "https://www.research.institute/publication/id789",
+    "Owner": "owner131@example.com",
+    "Status": "403 Forbidden",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de mode (tendances printemps)",
+    "URL": "https://www.fashion.blog/trends/spring",
+    "Owner": "owner368@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Multithreading Python sur Edureka",
+    "URL": "https://www.edureka.co/blog/python-multithreading/",
+    "Owner": "owner57@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog de mode (style d'influenceur)",
+    "URL": "https://www.fashion.blog/influencer/style",
+    "Owner": "owner302@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Recettes végétariennes (blog culinaire)",
+    "URL": "https://www.food.blog/vegetarian/recipes",
+    "Owner": "owner480@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Recettes végétaliennes (blog culinaire)",
+    "URL": "https://www.food.blog/vegan/recipes",
+    "Owner": "owner326@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog santé (nutrition)",
+    "URL": "https://www.health.blog/nutrition/diet",
+    "Owner": "owner187@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Dernières actualités",
+    "URL": "https://www.news.org/latest-updates",
+    "Owner": "owner115@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.news.org/latest-updates\": http: server gave HTTP response to HTTPS client"
+  },
+  {
+    "Name": "Concurrence en Go (documentation officielle)",
+    "URL": "https://www.golang.org/doc/effective_go.html#concurrency",
+    "Owner": "owner44@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Comprendre la concurrence en Go sur DigitalOcean",
+    "URL": "https://www.digitalocean.com/community/tutorials/understanding-concurrency-in-go",
+    "Owner": "owner43@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Conseils de jardinage (arrosage des plantes)",
+    "URL": "https://www.gardening.tips/watering/plants",
+    "Owner": "owner466@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Conseils de jardinage (rose)",
+    "URL": "https://www.gardening.tips/plant/rose",
+    "Owner": "owner158@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Sujets de concurrence sur GitHub",
+    "URL": "https://github.com/topics/concurrency",
+    "Owner": "owner8@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Conseils de jardinage (contrôle naturel des nuisibles)",
+    "URL": "https://www.gardening.tips/pest-control/natural",
+    "Owner": "owner312@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Événements de club sportif (match)",
+    "URL": "https://www.sports.club/events/match",
+    "Owner": "owner176@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Produit de boutique en ligne",
+    "URL": "https://shop.online.store/products/item-abc",
+    "Owner": "owner110@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://shop.online.store/products/item-abc\": dial tcp: lookup shop.online.store: no such host"
+  },
+  {
+    "Name": "Recette de dessert sur blog culinaire",
+    "URL": "https://www.food.blog/recipe/dessert",
+    "Owner": "owner172@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Article Wikipédia sur la concurrence (informatique)",
+    "URL": "https://www.wikipedia.org/wiki/Concurrence_(informatique)",
+    "Owner": "owner6@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog santé (exercice, force)",
+    "URL": "https://www.health.blog/exercise/strength",
+    "Owner": "owner495@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Blog santé (exercice, yoga)",
+    "URL": "https://www.health.blog/exercise/yoga",
+    "Owner": "owner341@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Concert de musique classique",
+    "URL": "https://www.music.concert/genre/classical",
+    "Owner": "owner417@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.concert/genre/classical\": dial tcp: lookup www.music.concert: no such host"
+  },
+  {
+    "Name": "Billets de concert rock",
+    "URL": "https://www.music.concert/tickets/rock",
+    "Owner": "owner263@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.music.concert/tickets/rock\": dial tcp: lookup www.music.concert: no such host"
+  },
+  {
+    "Name": "Application de traduction vocale (langue)",
+    "URL": "https://www.language.translator/app/voice",
+    "Owner": "owner403@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.translator/app/voice\": dial tcp: lookup www.language.translator: no such host"
+  },
+  {
+    "Name": "Traducteur linguistique (anglais-français)",
+    "URL": "https://www.language.translator/text/english-french",
+    "Owner": "owner249@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.language.translator/text/english-french\": dial tcp: lookup www.language.translator: no such host"
+  },
+  {
+    "Name": "Guide de projet DIY (construire une étagère)",
+    "URL": "https://www.diy.project/guide/build-shelf",
+    "Owner": "owner156@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.project/guide/build-shelf\": dial tcp: lookup www.diy.project: no such host"
+  },
+  {
+    "Name": "Détails du jeu sur plateforme de jeu",
+    "URL": "https://www.gaming.platform/game/details",
+    "Owner": "owner135@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.gaming.platform/game/details\": dial tcp: lookup www.gaming.platform: no such host"
+  },
+  {
+    "Name": "Plan d'entraînement fitness",
+    "URL": "https://www.health.fitness/workout/plan",
+    "Owner": "owner253@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Application de suivi fitness",
+    "URL": "https://www.health.fitness/app/tracker",
+    "Owner": "owner407@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Figma",
+    "URL": "https://figma.com",
+    "Owner": "figma@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Apprendre la concurrence Java sur Codecademy",
+    "URL": "https://www.codecademy.com/learn/learn-java-concurrency",
+    "Owner": "owner39@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Page d'exemple 101",
+    "URL": "https://www.example.com/page/101",
+    "Owner": "owner101@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Recettes de petit-déjeuner (crêpes)",
+    "URL": "https://www.food.recipes/breakfast/pancakes",
+    "Owner": "owner458@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Sujets de concurrence IBM",
+    "URL": "https://www.ibm.com/topics/concurrency",
+    "Owner": "owner19@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Nourriture pour chien en animalerie",
+    "URL": "https://www.pet.store/product/dog-food",
+    "Owner": "owner157@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.store/product/dog-food\": EOF"
+  },
+  {
+    "Name": "Entraîneur de football (entraînement sportif)",
+    "URL": "https://www.sports.training/coach/football",
+    "Owner": "owner264@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Programmation Rust (concurrence) sur O'Reilly",
+    "URL": "https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/ch16.html",
+    "Owner": "owner48@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Magasin de livres (genre fantastique)",
+    "URL": "https://www.book.store/genre/fantasy",
+    "Owner": "owner206@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.store/genre/fantasy\": EOF"
+  },
+  {
+    "Name": "Magasin de pièces automobiles en ligne",
+    "URL": "https://www.car.parts/online/store",
+    "Owner": "owner408@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Magasin de pièces automobiles (moteur)",
+    "URL": "https://www.car.parts/store/engine",
+    "Owner": "owner254@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Cours Coursera sur la concurrence",
+    "URL": "https://www.coursera.org/learn/concurrency",
+    "Owner": "owner35@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Meilleures ventes (fiction) (magasin de livres)",
+    "URL": "https://www.book.store/best-sellers/fiction",
+    "Owner": "owner360@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.book.store/best-sellers/fiction\": EOF"
+  },
+  {
+    "Name": "Service de physiothérapie (clinique de santé)",
+    "URL": "https://www.health.clinic/service/physiotherapy",
+    "Owner": "owner429@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Rendez-vous clinique de santé en ligne",
+    "URL": "https://www.health.clinic/appointment/online",
+    "Owner": "owner165@example.com",
+    "Status": "200 OK",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Sujets de concurrence Red Hat",
+    "URL": "https://www.redhat.com/en/topics/concurrency",
+    "Owner": "owner21@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Mission d'agence spatiale (Mars)",
+    "URL": "https://www.space.agency/mission/mars",
+    "Owner": "owner169@example.com",
+    "Status": "404 Not Found",
+    "ErrMsg": ""
+  },
+  {
+    "Name": "Article sur les soins préventifs",
+    "URL": "https://www.health.org/article/preventative-care",
+    "Owner": "owner126@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.health.org/article/preventative-care\": dial tcp: lookup www.health.org: no such host"
+  },
+  {
+    "Name": "Émission de chaîne culinaire (cuisine)",
+    "URL": "https://www.food.network/show/cooking",
+    "Owner": "owner216@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.food.network/show/cooking\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "API de statut local (exemple)",
+    "URL": "http://192.168.1.100:8080/api/status",
+    "Owner": "owner13@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"http://192.168.1.100:8080/api/status\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Projet de jardin DIY (lit surélevé)",
+    "URL": "https://www.diy.garden/project/raised-bed",
+    "Owner": "owner420@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.garden/project/raised-bed\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Recettes de chef (chaîne culinaire)",
+    "URL": "https://www.food.network/chef/recipes",
+    "Owner": "owner370@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.food.network/chef/recipes\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Réservation d'agence de voyage",
+    "URL": "https://www.travel.agency/booking/ref123",
+    "Owner": "owner123@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.travel.agency/booking/ref123\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Vérification de santé locale",
+    "URL": "http://10.0.0.5:5000/health",
+    "Owner": "owner113@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"http://10.0.0.5:5000/health\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Fil de discussion du forum",
+    "URL": "https://www.forum.community/thread/456",
+    "Owner": "owner117@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.forum.community/thread/456\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Page d'administration locale",
+    "URL": "http://172.16.0.1:80/admin",
+    "Owner": "owner133@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"http://172.16.0.1:80/admin\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Guide de voyage (Paris)",
+    "URL": "https://www.travel.guide/city/paris",
+    "Owner": "owner174@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.travel.guide/city/paris\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Service de vaccination vétérinaire",
+    "URL": "https://www.pet.vet/service/vaccination",
+    "Owner": "owner179@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.pet.vet/service/vaccination\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Profil utilisateur de médias sociaux",
+    "URL": "https://www.social.media/profile/user1",
+    "Owner": "owner136@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.social.media/profile/user1\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Projet de jardin DIY (lit surélevé)",
+    "URL": "https://www.diy.garden/project/raised-bed",
+    "Owner": "owner266@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.diy.garden/project/raised-bed\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Offres de voyage (forfait Europe)",
+    "URL": "https://www.travel.deals/package/europe",
+    "Owner": "owner240@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.travel.deals/package/europe\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  },
+  {
+    "Name": "Offres de vols (Europe)",
+    "URL": "https://www.travel.deals/flights/europe",
+    "Owner": "owner394@example.com",
+    "Status": "Inaccessible",
+    "ErrMsg": "Unreachable URL: Get \"https://www.travel.deals/flights/europe\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+  }
+]
