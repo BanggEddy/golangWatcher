@@ -41,7 +41,7 @@ go mod tidy
 go run main.go analyze --input config.json --output reports/report.json
 ```
 
-Structure du projet :
+## Structure du projet :
 ```bash
 golangWatcher/
 ├─ cmd/
@@ -64,7 +64,7 @@ golangWatcher/
 └─ README.md
 ```
 
-Usage :
+## Usage :
 ```bash
 # Commande principale
 go run main.go analyze --input <fichier_json_entree> --output <fichier_json_sortie>
@@ -76,7 +76,7 @@ Options :
 | `-i, --input` | Chemin vers le fichier JSON contenant la liste des logs.         |
 | `-o, --output`| Chemin vers le fichier JSON pour exporter les résultats. (optionnel) |
 
-Exemple de JSON d'entrée (config.json) :
+## Exemple de JSON d'entrée (config.json) :
 ```bash
 [
   {"id":"web-server-1", "path":"test_logs/access.log", "type":"info"},
@@ -88,7 +88,7 @@ Exemple de JSON d'entrée (config.json) :
 ]
 ```
 
-Résultat attendu
+## Résultat attendu
 Lors de l'exécution :
 ```bash
 go run . analyze -i config.json -o reports/report.json
