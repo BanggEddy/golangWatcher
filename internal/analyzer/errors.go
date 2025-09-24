@@ -1,16 +1,25 @@
-package checker
+package analyzer
 
 import "fmt"
 
-type UnreachableURLError struct {
-	URL string
-	Err error
+type FileNotFoundError struct {
+	Path string
+	Err  error
 }
 
-func (e *UnreachableURLError) Error() string {
-	return fmt.Sprintf("URL inaccessible : %s (%v)", e.URL, e.Err)
+func (e *FileNotFoundError) Error() string {
+	return fmt.Sprintf("fichier introuvable: %s (%v)", e.Path, e.Err)
 }
 
-func (e *UnreachableURLError) Unwrap() error {
+func (e *FileNotFoundError) Unwrap() error {
 	return e.Err
+}
+
+type ParseLogError struct {
+	Path string
+	Msg  string
+}
+
+func (e *ParseLogError) Error() string {
+	return fmt.Sprintf("erreur de parsing sur %s: %s", e.Path, e.Msg)
 }

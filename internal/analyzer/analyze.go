@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/axellelanca/gowatcher_correction/internal/config"
+	"github.com/BanggEddy/golangWatcher/internal/config"
 )
 
 // LogResult représente le résultat de l'analyse d'un log.

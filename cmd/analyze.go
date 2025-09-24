@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/axellelanca/go_loganizer/internal/analyzer"
-	"github.com/axellelanca/go_loganizer/internal/config"
-	"github.com/axellelanca/go_loganizer/internal/reporter"
+	"github.com/BanggEddy/golangWatcher/internal/analyzer"
+	"github.com/BanggEddy/golangWatcher/internal/config"
+	"github.com/BanggEddy/golangWatcher/internal/reporter"
 	"github.com/spf13/cobra"
 )
 
@@ -28,7 +28,7 @@ var analyzeCmd = &cobra.Command{
 			fmt.Println("Erreur: le chemin du fichier d'entrée (--input) est obligatoire.")
 			return
 		}
-		
+
 		// Charger les cibles depuis le fichier JSON d'entrée
 		targets, err := config.LoadTargetsFromFile(inputFilePath)
 		if err != nil {
@@ -90,16 +90,16 @@ var analyzeCmd = &cobra.Command{
 func init() {
 	// Cette ligne est cruciale : elle "ajoute" la sous-commande `checkCmd` à la commande racine `rootCmd`.
 	// C'est ainsi que Cobra sait que 'check' est une commande valide sous 'gowatcher'.
-	rootCmd.AddCommand(checkCmd)
-
+	rootCmd.AddCommand(analyzeCmd)
+	
 	// Ici, vous pouvez ajouter des drapeaux (flags) spécifiques à la commande 'check'.
 	// Ces drapeaux ne seront disponibles que lorsque la commande 'check' est utilisée.
 	// Exemple (commenté) : checkCmd.Flags().StringVarP(&sourceFile, "source", "s", "", "Fichier contenant les URLs à vérifier")
 
 	// Ajout des drapeaux spécifiques à la commande 'check'
-	checkCmd.Flags().StringVarP(&inputFilePath, "input", "i", "", "Chemin vers le fichier JSON d'entrée contenant les URLs")
-	checkCmd.Flags().StringVarP(&outputFilePath, "output", "o", "", "Chemin vers le fichier JSON de sortie pour les résultats (optionnel)")
-
+	analyzeCmd.Flags().StringVarP(&inputFilePath, "input", "i", "", "Chemin vers le fichier JSON d'entrée contenant les logs")
+	analyzeCmd.Flags().StringVarP(&outputFilePath, "output", "o", "", "Chemin vers le fichier JSON de sortie pour les résultats (optionnel)")
+	
 	// Marquer le drapeau "input" comme obligatoire
-	checkCmd.MarkFlagRequired("input")
+	analyzeCmd.MarkFlagRequired("input")
 }

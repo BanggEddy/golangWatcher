@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/axellelanca/gowatcher_correction/internal/checker"
+	"github.com/BanggEddy/golangWatcher/internal/analyzer"
 )
 
-// ExportResultsToJsonFile prend une liste de checker.ReportEntry et l'écrit dans un fichier JSON.
-func ExportResultsToJsonFile(filePath string, results []checker.ReportEntry) error {
+// ExportResultsToJsonFile prend une liste de LogResult et l'écrit dans un fichier JSON.
+func ExportResultsToJsonFile(filePath string, results []analyzer.LogResult) error {
 	// Utilise json.MarshalIndent pour formater le JSON avec des indentations pour la lisibilité.
-	data, err := json.MarshalIndent(results, "", "  ")
+	data, err := json.MarshalIndent(results, "", " ")
 	if err != nil {
 		return fmt.Errorf("impossible d'encoder les résultats en JSON: %w", err)
 	}
@@ -22,5 +22,4 @@ func ExportResultsToJsonFile(filePath string, results []checker.ReportEntry) err
 		return fmt.Errorf("impossible d'écrire le rapport JSON dans le fichier %s: %w", filePath, err)
 	}
 	return nil
-
 }
